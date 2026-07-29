@@ -1,4 +1,4 @@
 interface:
-  display_name: "Backend Product Design"
-  short_description: "判定单页面或系统应用，并用六套主题生成企业后台与架构图"
-  default_prompt: "Use $backend-design-skill to determine whether this needs a focused single page or a full system shell, then design and implement it with Cal.com as the default theme."
+  display_name: "Nebula Design"
+  short_description: "设计产品应用、营销官网与可交互技术图的通用前端 Skill"
+  default_prompt: "Use $nebula-design-skill to choose the right product or marketing surface, then design and implement it with the appropriate layout and visual theme."

@@ -1,4 +1,4 @@
-# Cal.com 风格：中后台适配
+# Cal.com 风格：产品应用适配
 
 读取本文件时同时遵守 [visual-system.md](visual-system.md) 和 [typography-system.md](typography-system.md)。
 
