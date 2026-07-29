@@ -1,6 +1,6 @@
 # Notion 风格：中后台适配
 
-读取本文件时同时遵守 [visual-system.md](visual-system.md) 的业务可用性与状态完整性要求。
+读取本文件时同时遵守 [visual-system.md](visual-system.md) 和 [typography-system.md](typography-system.md)。
 
 ## 风格定位
 
@@ -29,7 +29,8 @@
 
 ## 排版
 
-- 使用 Notion Sans；缺少字体资产时使用 Inter、系统无衬线或中文系统字体。
+- 英文使用 Notion Sans；缺少合法字体资产时使用 Inter 或系统无衬线。
+- 中文标题和正文使用 Noto Sans SC、思源黑体、苹方或微软雅黑。
 - 标题 600，正文 400–500，避免过粗。
 - 内容标题允许比 Clarity 稍宽松，但中后台页面标题通常不超过 28px。
 - 长文本保持舒适行高；表格、筛选和工具条仍使用紧凑尺寸。

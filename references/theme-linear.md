@@ -1,6 +1,6 @@
 # Linear 风格：中后台适配
 
-读取本文件时同时遵守 [visual-system.md](visual-system.md) 的业务可用性与状态完整性要求。
+读取本文件时同时遵守 [visual-system.md](visual-system.md) 和 [typography-system.md](typography-system.md)。
 
 ## 风格定位
 
@@ -28,7 +28,9 @@
 
 ## 排版
 
-- 标题使用 Linear Display；缺少字体资产时用 `SF Pro Display`、Inter 或系统无衬线。
+- 英文标题使用 Linear Display；缺少合法字体资产时用 `SF Pro Display`、Inter 或系统无衬线。
+- 中文标题和正文使用 Noto Sans SC、思源黑体、苹方或微软雅黑。
+- 英文正文使用 Linear Text、`SF Pro Text` 或 Inter。
 - 标题 500–600，并使用轻微负字距；正文保持 400–500。
 - 中后台页面标题保持 20–28px，避免把营销页 80px 标题带入产品界面。
 - ID、版本、状态和技术元数据可使用系统等宽字体。

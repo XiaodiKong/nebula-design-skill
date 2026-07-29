@@ -1,0 +1,126 @@
+:root {
+  color-scheme: light;
+
+  --admin-theme-name: "claude";
+  --admin-font-latin-body: "StyreneB", Inter, "SF Pro Text";
+  --admin-font-cjk-body: "Noto Sans SC", "Source Han Sans SC", "PingFang SC",
+    "Microsoft YaHei";
+  --admin-font-latin-display: "Copernicus", "Tiempos Headline",
+    "Cormorant Garamond", "EB Garamond", Georgia;
+  --admin-font-cjk-display: "Noto Serif SC", "Source Han Serif SC",
+    "Songti SC", STSong;
+  --admin-font-mono: "JetBrains Mono", "SFMono-Regular", Menlo, Consolas,
+    "Liberation Mono", "Sarasa Mono SC", "Noto Sans Mono CJK SC", monospace;
+  --admin-font-body:
+    var(--admin-font-latin-body),
+    var(--admin-font-cjk-body),
+    sans-serif;
+  --admin-font-display:
+    var(--admin-font-latin-display),
+    var(--admin-font-cjk-display),
+    serif;
+  --admin-font-sans: var(--admin-font-body);
+
+  --admin-color-primary: #cc785c;
+  --admin-color-primary-hover: #d8896f;
+  --admin-color-primary-active: #a9583e;
+  --admin-color-primary-subtle: #f3e3dc;
+  --admin-color-on-primary: #181715;
+  --admin-color-ai: #246b60;
+  --admin-color-ai-subtle: #e1f2ee;
+
+  --admin-color-text: #141413;
+  --admin-color-text-secondary: #3d3d3a;
+  --admin-color-text-muted: #6c6a64;
+  --admin-color-text-disabled: #8e8b82;
+  --admin-color-bg-page: #faf9f5;
+  --admin-color-bg-surface: #fffefa;
+  --admin-color-bg-hover: #f5f0e8;
+  --admin-color-bg-elevated: #fffefa;
+  --admin-color-border: #e6dfd8;
+  --admin-color-border-strong: #d4c9bd;
+
+  --admin-color-success: #4b9d60;
+  --admin-color-success-subtle: #e5f2e8;
+  --admin-color-warning: #b18412;
+  --admin-color-warning-subtle: #f8efd1;
+  --admin-color-danger: #c64545;
+  --admin-color-danger-subtle: #f7e3e1;
+
+  --admin-sidebar-bg: #181715;
+  --admin-sidebar-text: #faf9f5;
+  --admin-sidebar-muted: #a09d96;
+  --admin-sidebar-hover: #252320;
+  --admin-sidebar-active: #cc785c;
+  --admin-sidebar-active-text: #181715;
+  --admin-sidebar-border: #302e2a;
+  --admin-avatar-bg: #cc785c;
+  --admin-diagram-grid: rgb(108 106 100 / 18%);
+  --admin-diagram-group-bg: rgb(245 240 232 / 80%);
+  --admin-diagram-edge: #6c6a64;
+
+  --admin-space-1: 4px;
+  --admin-space-2: 8px;
+  --admin-space-3: 12px;
+  --admin-space-4: 16px;
+  --admin-space-6: 24px;
+  --admin-space-8: 32px;
+
+  --admin-radius-tag: 9999px;
+  --admin-radius-control: 8px;
+  --admin-radius-surface: 12px;
+  --admin-radius-dialog: 12px;
+
+  --admin-height-control-compact: 30px;
+  --admin-height-control: 36px;
+  --admin-height-control-comfortable: 40px;
+  --admin-height-header: 56px;
+  --admin-width-sidebar: 224px;
+  --admin-width-sidebar-collapsed: 64px;
+
+  --admin-shadow-floating: 0 8px 24px rgb(20 20 19 / 9%);
+  --admin-focus-ring: 0 0 0 3px rgb(204 120 92 / 22%);
+  --admin-motion-fast: 120ms;
+  --admin-motion-base: 180ms;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--admin-color-text);
+  background: var(--admin-color-bg-page);
+  font-family: var(--admin-font-body);
+  font-size: 14px;
+  line-height: 1.5715;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--admin-font-display);
+}
+
+code,
+kbd,
+pre {
+  font-family: var(--admin-font-mono);
+}
+
+:focus-visible {
+  outline: 2px solid var(--admin-color-primary);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

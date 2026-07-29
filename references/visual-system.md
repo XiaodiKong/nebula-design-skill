@@ -1,6 +1,6 @@
-# 共用视觉底线与 Clarity 默认主题
+# 共用视觉底线与 Clarity 主题
 
-本文件定义所有主题共用的产品设计底线，并给出默认 Clarity 主题。主题选择与其他视觉语言见 [theme-selection.md](theme-selection.md)。
+本文件定义所有主题共用的产品设计底线，并给出 Clarity 主题。Skill 的默认主题为 Cal.com；主题选择与其他视觉语言见 [theme-selection.md](theme-selection.md)。
 
 ## 目录
 
@@ -74,11 +74,10 @@
 
 ## 字体
 
-使用：
+Clarity 主题使用无衬线中英文字体组合。所有主题必须拆分正文、标题和代码三种角色；详细令牌、加载方式与中文回退规则见 [typography-system.md](typography-system.md)。
 
 ```css
-font-family: Inter, "PingFang SC", "Microsoft YaHei",
-  "Noto Sans CJK SC", system-ui, sans-serif;
+font-family: var(--admin-font-body);
 ```
 
 | 层级 | 字号 / 行高 | 字重 |
@@ -174,4 +173,4 @@ font-family: Inter, "PingFang SC", "Microsoft YaHei",
 
 ## 暗色模式
 
-Clarity、Cal.com 和 Notion 默认交付浅色；Linear 默认交付暗色。实现暗色时使用语义令牌重新映射，不直接反转颜色；检查表格悬停、状态标签、图表、代码编辑器和弹层对比度。
+Clarity、Cal.com、Notion、Claude 和 OpenCode AI 默认交付浅色；Linear 默认交付暗色。实现暗色时使用语义令牌重新映射，不直接反转颜色；检查表格悬停、状态标签、图表、代码编辑器和弹层对比度。

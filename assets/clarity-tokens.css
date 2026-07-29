@@ -1,8 +1,22 @@
 :root {
   color-scheme: light;
 
-  --clarity-font-sans: Inter, "PingFang SC", "Microsoft YaHei",
-    "Noto Sans CJK SC", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --clarity-font-latin-body: Inter, "SF Pro Text", "Segoe UI";
+  --clarity-font-cjk-body: "Noto Sans SC", "Source Han Sans SC", "PingFang SC",
+    "Microsoft YaHei";
+  --clarity-font-latin-display: Inter, "SF Pro Display", "Segoe UI";
+  --clarity-font-cjk-display: var(--clarity-font-cjk-body);
+  --clarity-font-mono: "JetBrains Mono", "SFMono-Regular", Menlo, Consolas,
+    "Liberation Mono", "Sarasa Mono SC", "Noto Sans Mono CJK SC", monospace;
+  --clarity-font-body:
+    var(--clarity-font-latin-body),
+    var(--clarity-font-cjk-body),
+    sans-serif;
+  --clarity-font-display:
+    var(--clarity-font-latin-display),
+    var(--clarity-font-cjk-display),
+    sans-serif;
+  --clarity-font-sans: var(--clarity-font-body);
 
   --clarity-color-primary: #246bfd;
   --clarity-color-primary-hover: #4a85ff;
@@ -54,6 +68,13 @@
 
   /* Shared theme contract. Keep the Clarity names above for compatibility. */
   --admin-theme-name: "clarity";
+  --admin-font-latin-body: var(--clarity-font-latin-body);
+  --admin-font-cjk-body: var(--clarity-font-cjk-body);
+  --admin-font-latin-display: var(--clarity-font-latin-display);
+  --admin-font-cjk-display: var(--clarity-font-cjk-display);
+  --admin-font-mono: var(--clarity-font-mono);
+  --admin-font-body: var(--clarity-font-body);
+  --admin-font-display: var(--clarity-font-display);
   --admin-font-sans: var(--clarity-font-sans);
   --admin-color-primary: var(--clarity-color-primary);
   --admin-color-primary-hover: var(--clarity-color-primary-hover);
@@ -84,6 +105,7 @@
   --admin-sidebar-hover: rgb(255 255 255 / 7%);
   --admin-sidebar-active: var(--clarity-color-primary);
   --admin-sidebar-active-text: #ffffff;
+  --admin-sidebar-border: rgb(255 255 255 / 8%);
   --admin-avatar-bg: #596780;
   --admin-diagram-grid: rgb(134 144 156 / 22%);
   --admin-diagram-group-bg: rgb(245 247 250 / 72%);
@@ -118,10 +140,22 @@ body {
   margin: 0;
   color: var(--admin-color-text);
   background: var(--admin-color-bg-page);
-  font-family: var(--admin-font-sans);
+  font-family: var(--admin-font-body);
   font-size: 14px;
   line-height: 1.5715;
   -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--admin-font-display);
+}
+
+code,
+kbd,
+pre {
+  font-family: var(--admin-font-mono);
 }
 
 :focus-visible {

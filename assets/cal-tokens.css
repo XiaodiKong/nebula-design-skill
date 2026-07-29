@@ -2,8 +2,22 @@
   color-scheme: light;
 
   --admin-theme-name: "cal";
-  --admin-font-sans: Inter, "PingFang SC", "Microsoft YaHei",
-    "Noto Sans CJK SC", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --admin-font-latin-body: Inter, "Avenir Next", "SF Pro Text";
+  --admin-font-cjk-body: "HarmonyOS Sans SC", MiSans, "Noto Sans SC",
+    "PingFang SC", "Microsoft YaHei";
+  --admin-font-latin-display: "Cal Sans", "Avenir Next", Manrope, Inter;
+  --admin-font-cjk-display: var(--admin-font-cjk-body);
+  --admin-font-mono: "JetBrains Mono", "SFMono-Regular", Menlo, Consolas,
+    "Sarasa Mono SC", "Noto Sans Mono CJK SC", monospace;
+  --admin-font-body:
+    var(--admin-font-latin-body),
+    var(--admin-font-cjk-body),
+    sans-serif;
+  --admin-font-display:
+    var(--admin-font-latin-display),
+    var(--admin-font-cjk-display),
+    sans-serif;
+  --admin-font-sans: var(--admin-font-body);
 
   --admin-color-primary: #111111;
   --admin-color-primary-hover: #242424;
@@ -37,6 +51,7 @@
   --admin-sidebar-hover: #f5f5f5;
   --admin-sidebar-active: #111111;
   --admin-sidebar-active-text: #ffffff;
+  --admin-sidebar-border: #e5e7eb;
   --admin-avatar-bg: #111111;
   --admin-diagram-grid: rgb(107 114 128 / 18%);
   --admin-diagram-group-bg: rgb(245 245 245 / 78%);
@@ -75,10 +90,22 @@ body {
   margin: 0;
   color: var(--admin-color-text);
   background: var(--admin-color-bg-page);
-  font-family: var(--admin-font-sans);
+  font-family: var(--admin-font-body);
   font-size: 14px;
   line-height: 1.5715;
   -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--admin-font-display);
+}
+
+code,
+kbd,
+pre {
+  font-family: var(--admin-font-mono);
 }
 
 :focus-visible {

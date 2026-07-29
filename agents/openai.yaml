@@ -1,4 +1,4 @@
 interface:
   display_name: "Backend Product Design"
-  short_description: "使用四套可选主题生成专业企业后台页面与可交互架构图"
-  default_prompt: "Use $backend-design-skill to design and implement an enterprise admin page or interactive technical diagram with the most suitable selectable theme."
+  short_description: "判定单页面或系统应用，并用六套主题生成企业后台与架构图"
+  default_prompt: "Use $backend-design-skill to determine whether this needs a focused single page or a full system shell, then design and implement it with Cal.com as the default theme."

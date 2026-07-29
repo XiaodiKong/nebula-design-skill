@@ -1,6 +1,6 @@
 # 主题选择与切换
 
-本 Skill 提供四套视觉主题。主题只改变视觉语言、密度和组件表面，不改变业务模型、信息架构、权限、状态或可访问性要求。
+本 Skill 提供六套视觉主题。主题只改变视觉语言、字体、密度和组件表面，不改变业务模型、信息架构、权限、状态或可访问性要求。
 
 ## 选择矩阵
 
@@ -10,26 +10,30 @@
 | Cal.com | 黑白中性、留白、柔和卡片、友好 SaaS | 表单、预约、客户成功、轻量工作台 | 极高密度监控大盘 |
 | Notion | 暖灰、编辑感、柔和色块、内容优先 | 知识、项目、内容、协作工作区 | 需要强烈告警氛围的监控中心 |
 | Linear | 近黑画布、薰衣草蓝、精密、低噪声 | 工程、研发、自动化、技术运维 | 强日照环境或用户明确要求浅色 |
+| Claude | 奶油画布、珊瑚色、衬线标题、人文编辑感 | AI、研究、内容、知识分析 | 极高密度实时监控 |
+| OpenCode AI | 全局等宽、暖白与终端黑、ASCII、锐利 | AI 编码、研发、日志、终端工作台 | 长篇大众内容与非技术用户 |
 
 ## 决策规则
 
 1. 用户明确指定主题时直接使用，不混入其他主题的标志性表面。
-2. 用户要求提供选择时，给出四个同结构的小型预览或实现主题切换器。
-3. 用户未指定时，中文企业中后台默认使用 Clarity。
-4. 内容、知识和协作工具可优先建议 Notion；轻量 SaaS 可建议 Cal.com；暗色工程工具可建议 Linear。
+2. 用户要求提供选择时，给出六个同结构的小型预览或实现主题切换器。
+3. 用户未指定时默认使用 Cal.com。
+4. 只有用户明确要求推荐、比较或选择最合适主题时，才按场景建议：高密度风控与数据后台使用 Clarity；内容、知识和协作工具使用 Notion；暗色工程工具使用 Linear；人文 AI 产品使用 Claude；终端与编码工具使用 OpenCode AI。业务类型本身不能自动覆盖 Cal.com 默认值。
 5. 主题选择不会删除业务语义色。Linear 等低彩度主题仍要为错误、警告和成功提供可辨识状态，但把颜色限制在状态组件内。
-6. 自定义字体只有在项目已有合法字体资产时使用；否则采用主题文件中的系统字体回退。
+6. 字体遵守 [typography-system.md](typography-system.md)。自定义字体只有在项目已有合法字体资产时使用；否则采用主题文件中的系统与开源字体回退。
 
 ## 实现契约
 
-新项目优先复制一套主题令牌：
+新项目未指定主题时优先复制 Cal.com 令牌；用户指定或选择其他主题时复制对应令牌：
 
 - Clarity：[assets/clarity-tokens.css](../assets/clarity-tokens.css)
 - Cal.com：[assets/cal-tokens.css](../assets/cal-tokens.css)
 - Notion：[assets/notion-tokens.css](../assets/notion-tokens.css)
 - Linear：[assets/linear-tokens.css](../assets/linear-tokens.css)
+- Claude：[assets/claude-tokens.css](../assets/claude-tokens.css)
+- OpenCode AI：[assets/opencode-tokens.css](../assets/opencode-tokens.css)
 
-四套文件都暴露同一组 `--admin-*` 语义变量。组件只依赖语义变量，不依赖主题名称：
+六套文件都暴露同一组 `--admin-*` 语义变量，包括分离的中英文字体令牌。组件只依赖语义变量，不依赖主题名称：
 
 ```css
 .primary-button {
@@ -41,7 +45,7 @@
 
 需要运行时切换时：
 
-1. 把四套令牌放在 `[data-admin-theme="..."]` 作用域，或把选中的令牌样式表启用。
+1. 把六套令牌放在 `[data-admin-theme="..."]` 作用域，或把选中的令牌样式表启用。
 2. 把选择持久化到 `localStorage`；首次加载尊重产品默认值。
 3. 同步设置 `color-scheme`，避免 Linear 暗色主题出现错误的系统控件。
 4. 切换后检查图表、弹层、滚动条、空态和焦点环，不只检查按钮颜色。
@@ -62,6 +66,6 @@
 
 ## 来源说明
 
-Cal.com、Notion 和 Linear 的视觉资料改编自
+Cal.com、Notion、Linear、Claude 和 OpenCode AI 的视觉资料改编自
 [VoltAgent/awesome-design-md](https://github.com/VoltAgent/awesome-design-md) 中的公开页面分析，仓库采用 MIT License。
 这些主题是面向本 Skill 的中后台适配，不是相关品牌的官方设计系统、商标授权或像素级复刻。

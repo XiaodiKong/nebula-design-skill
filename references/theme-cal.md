@@ -1,6 +1,6 @@
 # Cal.com 风格：中后台适配
 
-读取本文件时同时遵守 [visual-system.md](visual-system.md) 的业务可用性与状态完整性要求。
+读取本文件时同时遵守 [visual-system.md](visual-system.md) 和 [typography-system.md](typography-system.md)。
 
 ## 风格定位
 
@@ -26,8 +26,9 @@
 
 ## 排版
 
-- 标题优先使用 `Cal Sans`；缺少合法字体资产时用 Inter 600 并设置轻微负字距。
-- 正文、表格、按钮和导航使用 Inter 或系统无衬线。
+- 英文标题优先使用 `Cal Sans`；缺少合法字体资产时使用 Inter 600。
+- 中文标题使用 HarmonyOS Sans SC、Noto Sans SC、苹方或微软雅黑，不对中文应用负字距。
+- 英文正文、表格、按钮和导航使用 Inter；中文正文使用 Noto Sans SC、苹方或微软雅黑。
 - 中后台页面标题保持 `20–28px`，不要照搬营销页的超大展示字号。
 - 按钮文字使用 14px / 600；数字使用等宽数字特性。
 

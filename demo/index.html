@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh-CN" data-theme="clarity">
+<html lang="zh-CN" data-theme="cal">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,8 +7,13 @@
   <style>
     :root {
       color-scheme: light;
-      --font-sans: Inter, "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
-      --font-display: Inter, "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", system-ui, sans-serif;
+      --font-latin-body: Inter, "Helvetica Neue", Arial;
+      --font-cjk-body: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC";
+      --font-latin-display: Inter, "Helvetica Neue", Arial;
+      --font-cjk-display: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC";
+      --font-mono: "JetBrains Mono", "SFMono-Regular", Consolas, "Noto Sans Mono CJK SC", monospace;
+      --font-body: var(--font-latin-body), var(--font-cjk-body), system-ui, sans-serif;
+      --font-display: var(--font-latin-display), var(--font-cjk-display), system-ui, sans-serif;
       --primary: #246bfd;
       --primary-hover: #4a85ff;
       --primary-active: #1b55d9;
@@ -59,8 +64,13 @@
 
     html[data-theme="cal"] {
       color-scheme: light;
-      --font-sans: Inter, "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
-      --font-display: "Cal Sans", Inter, "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+      --font-latin-body: Inter, "Helvetica Neue", Arial;
+      --font-cjk-body: "Noto Sans SC", "PingFang SC", "Microsoft YaHei";
+      --font-latin-display: "Cal Sans", Inter, "Helvetica Neue", Arial;
+      --font-cjk-display: "Noto Sans SC", "PingFang SC", "Microsoft YaHei";
+      --font-mono: "JetBrains Mono", "SFMono-Regular", Consolas, "Noto Sans Mono CJK SC", monospace;
+      --font-body: var(--font-latin-body), var(--font-cjk-body), system-ui, sans-serif;
+      --font-display: var(--font-latin-display), var(--font-cjk-display), system-ui, sans-serif;
       --primary: #111111;
       --primary-hover: #242424;
       --primary-active: #000000;
@@ -101,8 +111,13 @@
 
     html[data-theme="notion"] {
       color-scheme: light;
-      --font-sans: "Notion Sans", Inter, "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
-      --font-display: "Notion Sans", Inter, "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+      --font-latin-body: "Notion Sans", Inter, "Helvetica Neue", Arial;
+      --font-cjk-body: "Noto Sans SC", "PingFang SC", "Microsoft YaHei";
+      --font-latin-display: "Notion Sans", Inter, "Helvetica Neue", Arial;
+      --font-cjk-display: "Noto Sans SC", "Source Han Sans SC", "PingFang SC", "Microsoft YaHei";
+      --font-mono: "SFMono-Regular", "JetBrains Mono", Consolas, "Noto Sans Mono CJK SC", monospace;
+      --font-body: var(--font-latin-body), var(--font-cjk-body), system-ui, sans-serif;
+      --font-display: var(--font-latin-display), var(--font-cjk-display), system-ui, sans-serif;
       --primary: #5645d4;
       --primary-hover: #6756df;
       --primary-active: #4534b3;
@@ -147,8 +162,13 @@
 
     html[data-theme="linear"] {
       color-scheme: dark;
-      --font-sans: "Linear Text", "SF Pro Text", Inter, "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
-      --font-display: "Linear Display", "SF Pro Display", Inter, "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+      --font-latin-body: "Linear Text", "SF Pro Text", Inter, "Helvetica Neue", Arial;
+      --font-cjk-body: "Noto Sans SC", "PingFang SC", "Microsoft YaHei";
+      --font-latin-display: "Linear Display", "SF Pro Display", Inter, "Helvetica Neue", Arial;
+      --font-cjk-display: "Noto Sans SC", "PingFang SC", "Microsoft YaHei";
+      --font-mono: "Berkeley Mono", "SFMono-Regular", "JetBrains Mono", "Noto Sans Mono CJK SC", monospace;
+      --font-body: var(--font-latin-body), var(--font-cjk-body), system-ui, sans-serif;
+      --font-display: var(--font-latin-display), var(--font-cjk-display), system-ui, sans-serif;
       --primary: #5e6ad2;
       --primary-hover: #828fff;
       --primary-active: #5e69d1;
@@ -191,6 +211,110 @@
       --handling: #b46d94;
     }
 
+    html[data-theme="claude"] {
+      color-scheme: light;
+      --font-latin-body: StyreneB, Inter, "Helvetica Neue", Arial;
+      --font-cjk-body: "Noto Sans SC", "Source Han Sans SC", "PingFang SC", "Microsoft YaHei";
+      --font-latin-display: Copernicus, Tiempos, "Cormorant Garamond", "EB Garamond", Georgia;
+      --font-cjk-display: "Noto Serif SC", "Source Han Serif SC", "Songti SC", "STSong";
+      --font-mono: "JetBrains Mono", "SFMono-Regular", Consolas, "Noto Sans Mono CJK SC", monospace;
+      --font-body: var(--font-latin-body), var(--font-cjk-body), system-ui, sans-serif;
+      --font-display: var(--font-latin-display), var(--font-cjk-display), serif;
+      --primary: #cc785c;
+      --primary-hover: #d8896f;
+      --primary-active: #a9583e;
+      --primary-subtle: #f3e3dc;
+      --text: #141413;
+      --text-secondary: #3d3d3a;
+      --text-muted: #6c6a64;
+      --text-disabled: #8e8b82;
+      --page-bg: #faf9f5;
+      --surface: #fffefa;
+      --surface-hover: #f5f0e8;
+      --surface-elevated: #fffefa;
+      --border: #e6dfd8;
+      --border-strong: #d4c9bd;
+      --on-primary: #181715;
+      --success: #4b8f5d;
+      --success-subtle: #e5f2e8;
+      --warning: #9a7410;
+      --warning-subtle: #f8efd1;
+      --danger: #b63f3f;
+      --danger-subtle: #f7e3e1;
+      --sidebar-bg: #181715;
+      --sidebar-text: #d2cfc7;
+      --sidebar-muted: #88857e;
+      --sidebar-hover: #252320;
+      --sidebar-hover-text: #faf9f5;
+      --sidebar-active: #cc785c;
+      --sidebar-active-text: #181715;
+      --sidebar-border: #302e2a;
+      --avatar-bg: #cc785c;
+      --radius-control: 8px;
+      --radius-surface: 12px;
+      --shadow-floating: 0 12px 28px rgb(58 44 37 / 12%);
+      --focus-ring: 0 0 0 3px rgb(204 120 92 / 22%);
+      --graph-bg: #fffefa;
+      --graph-grid: rgb(108 106 100 / 18%);
+      --match-ring: 0 0 0 2px rgb(204 120 92 / 18%);
+      --identity: #8a6f63;
+      --event: #cc785c;
+      --decision: #4b8f5d;
+      --handling: #9a5f7a;
+    }
+
+    html[data-theme="opencode"] {
+      color-scheme: light;
+      --font-latin-body: "Berkeley Mono", "JetBrains Mono", "IBM Plex Mono", "Geist Mono", "SFMono-Regular", Consolas;
+      --font-cjk-body: "Sarasa Mono SC", "Noto Sans Mono CJK SC", "PingFang SC", "Microsoft YaHei";
+      --font-latin-display: var(--font-latin-body);
+      --font-cjk-display: var(--font-cjk-body);
+      --font-mono: var(--font-latin-body), var(--font-cjk-body), monospace;
+      --font-body: var(--font-latin-body), var(--font-cjk-body), monospace;
+      --font-display: var(--font-body);
+      --primary: #201d1d;
+      --primary-hover: #302c2c;
+      --primary-active: #0f0000;
+      --primary-subtle: #f1eeee;
+      --text: #201d1d;
+      --text-secondary: #424245;
+      --text-muted: #646262;
+      --text-disabled: #9a9898;
+      --page-bg: #fdfcfc;
+      --surface: #fdfcfc;
+      --surface-hover: #f8f7f7;
+      --surface-elevated: #ffffff;
+      --border: rgb(15 0 0 / 12%);
+      --border-strong: #b5b1b1;
+      --on-primary: #fdfcfc;
+      --success: #248a43;
+      --success-subtle: #e8f5eb;
+      --warning: #a35f00;
+      --warning-subtle: #fff1d6;
+      --danger: #d52f28;
+      --danger-subtle: #fde8e6;
+      --sidebar-bg: #201d1d;
+      --sidebar-text: #dedada;
+      --sidebar-muted: #949090;
+      --sidebar-hover: #302c2c;
+      --sidebar-hover-text: #fdfcfc;
+      --sidebar-active: #302c2c;
+      --sidebar-active-text: #fdfcfc;
+      --sidebar-border: #424245;
+      --avatar-bg: #007aff;
+      --radius-control: 4px;
+      --radius-surface: 4px;
+      --shadow-floating: none;
+      --focus-ring: 0 0 0 3px rgb(0 122 255 / 22%);
+      --graph-bg: #fdfcfc;
+      --graph-grid: rgb(15 0 0 / 12%);
+      --match-ring: 0 0 0 2px rgb(0 122 255 / 18%);
+      --identity: #007aff;
+      --event: #a35f00;
+      --decision: #248a43;
+      --handling: #9a4fa0;
+    }
+
     * {
       box-sizing: border-box;
     }
@@ -205,7 +329,7 @@
     body {
       color: var(--text);
       background: var(--page-bg);
-      font-family: var(--font-sans);
+      font-family: var(--font-body);
       font-size: 14px;
       line-height: 1.5715;
       -webkit-font-smoothing: antialiased;
@@ -979,6 +1103,7 @@
       margin-top: 2px;
       overflow: hidden;
       color: var(--text-muted);
+      font-family: var(--font-mono);
       font-size: 12px;
       text-overflow: ellipsis;
       white-space: nowrap;
@@ -1060,6 +1185,7 @@
 
     .section-title {
       margin: 18px 0 8px;
+      font-family: var(--font-display);
       font-size: 14px;
       font-weight: 600;
     }
@@ -1129,6 +1255,7 @@
       color: var(--text-muted);
       background: var(--surface);
       border-top: 1px solid var(--border);
+      font-family: var(--font-mono);
       font-size: 12px;
     }
 
@@ -1279,7 +1406,7 @@
       }
 
       .theme-select {
-        max-width: 92px;
+        max-width: 112px;
       }
 
       .page-header {
@@ -1440,10 +1567,12 @@
           <label class="theme-picker" for="themeSwitcher">
             <span class="theme-picker-label">界面风格</span>
             <select class="theme-select" id="themeSwitcher" aria-label="界面风格">
-              <option value="clarity">Clarity</option>
               <option value="cal">Cal.com</option>
+              <option value="clarity">Clarity</option>
               <option value="notion">Notion</option>
               <option value="linear">Linear</option>
+              <option value="claude">Claude</option>
+              <option value="opencode">OpenCode AI</option>
             </select>
           </label>
           <span class="environment-badge"><span class="environment-dot"></span>生产环境</span>
@@ -1607,10 +1736,12 @@
         clarity: "Clarity",
         cal: "Cal.com",
         notion: "Notion",
-        linear: "Linear"
+        linear: "Linear",
+        claude: "Claude",
+        opencode: "OpenCode AI"
       };
       const allowedThemes = new Set(Object.keys(themeNames));
-      let initialTheme = document.documentElement.dataset.theme || "clarity";
+      let initialTheme = document.documentElement.dataset.theme || "cal";
       try {
         const savedTheme = window.localStorage.getItem(themeStorageKey);
         if (savedTheme && allowedThemes.has(savedTheme)) initialTheme = savedTheme;
