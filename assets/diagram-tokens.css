@@ -1,0 +1,201 @@
+:root {
+  --diagram-canvas-bg: var(--admin-color-bg-surface, #ffffff);
+  --diagram-grid-dot: var(--admin-diagram-grid, rgb(134 144 156 / 22%));
+  --diagram-node-bg: var(--admin-color-bg-surface, #ffffff);
+  --diagram-node-border: var(--admin-color-border, #e5e6eb);
+  --diagram-node-border-hover: var(--admin-color-border-strong, #c9cdd4);
+  --diagram-node-border-selected: var(--admin-color-primary, #246bfd);
+  --diagram-group-bg: var(--admin-diagram-group-bg, rgb(245 247 250 / 72%));
+  --diagram-group-border: var(--admin-color-border, #e5e6eb);
+  --diagram-edge: var(--admin-diagram-edge, #86909c);
+  --diagram-edge-muted: var(--admin-color-border-strong, #c9cdd4);
+  --diagram-edge-active: var(--admin-color-primary, #246bfd);
+  --diagram-port-bg: var(--admin-color-bg-surface, #ffffff);
+  --diagram-port-border: var(--admin-color-text-muted, #86909c);
+
+  --diagram-node-width: 168px;
+  --diagram-node-min-height: 64px;
+  --diagram-node-width-compact: 144px;
+  --diagram-node-min-height-compact: 48px;
+  --diagram-node-radius: var(--admin-radius-control, 6px);
+  --diagram-group-radius: var(--admin-radius-surface, 8px);
+  --diagram-port-size: 8px;
+  --diagram-edge-width: 1.5px;
+  --diagram-layer-gap: 80px;
+  --diagram-sibling-gap: 32px;
+}
+
+.clarity-diagram,
+.admin-diagram {
+  position: relative;
+  min-width: 0;
+  min-height: 480px;
+  overflow: hidden;
+  color: var(--admin-color-text, #1d2129);
+  background-color: var(--diagram-canvas-bg);
+  background-image: radial-gradient(
+    circle,
+    var(--diagram-grid-dot) 1px,
+    transparent 1px
+  );
+  background-size: 16px 16px;
+  border: 1px solid var(--admin-color-border, #e5e6eb);
+  border-radius: var(--admin-radius-surface, 8px);
+}
+
+.diagram-node {
+  box-sizing: border-box;
+  width: var(--diagram-node-width);
+  min-height: var(--diagram-node-min-height);
+  padding: 10px 12px;
+  color: var(--admin-color-text, #1d2129);
+  background: var(--diagram-node-bg);
+  border: 1px solid var(--diagram-node-border);
+  border-radius: var(--diagram-node-radius);
+  transition:
+    border-color var(--admin-motion-fast, 120ms) ease,
+    box-shadow var(--admin-motion-fast, 120ms) ease,
+    background-color var(--admin-motion-fast, 120ms) ease;
+}
+
+.diagram-node:hover {
+  background: var(--admin-color-bg-hover, #f7f8fa);
+  border-color: var(--diagram-node-border-hover);
+}
+
+.diagram-node[aria-selected="true"],
+.diagram-node[data-selected="true"] {
+  border-color: var(--diagram-node-border-selected);
+  box-shadow: var(--admin-focus-ring, 0 0 0 3px rgb(36 107 253 / 20%));
+}
+
+.diagram-node:focus-visible {
+  outline: 2px solid var(--admin-color-primary, #246bfd);
+  outline-offset: 2px;
+}
+
+.diagram-node__title {
+  display: -webkit-box;
+  overflow: hidden;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.diagram-node__meta {
+  margin-top: 4px;
+  overflow: hidden;
+  color: var(--admin-color-text-muted, #86909c);
+  font-size: 12px;
+  line-height: 18px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.diagram-node[data-status="running"] {
+  border-left: 3px solid var(--admin-color-primary, #246bfd);
+}
+
+.diagram-node[data-status="success"] {
+  border-left: 3px solid var(--admin-color-success, #00a870);
+}
+
+.diagram-node[data-status="warning"] {
+  border-left: 3px solid var(--admin-color-warning, #d97706);
+}
+
+.diagram-node[data-status="error"] {
+  border-left: 3px solid var(--admin-color-danger, #e5484d);
+}
+
+.diagram-node[data-status="disabled"] {
+  color: var(--admin-color-text-disabled, #c9cdd4);
+  background: var(--admin-color-bg-hover, #f7f8fa);
+}
+
+.diagram-group {
+  box-sizing: border-box;
+  padding: 40px 24px 24px;
+  background: var(--diagram-group-bg);
+  border: 1px dashed var(--diagram-group-border);
+  border-radius: var(--diagram-group-radius);
+}
+
+.diagram-group__title {
+  color: var(--admin-color-text-secondary, #4e5969);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 20px;
+}
+
+.diagram-port {
+  width: var(--diagram-port-size);
+  height: var(--diagram-port-size);
+  background: var(--diagram-port-bg);
+  border: 1.5px solid var(--diagram-port-border);
+  border-radius: 50%;
+}
+
+.diagram-edge {
+  fill: none;
+  stroke: var(--diagram-edge);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: var(--diagram-edge-width);
+}
+
+.diagram-edge[data-kind="async"],
+.diagram-edge[data-kind="reference"] {
+  stroke-dasharray: 5 4;
+}
+
+.diagram-edge[data-active="true"],
+.diagram-edge[data-status="active"] {
+  stroke: var(--diagram-edge-active);
+  stroke-width: 2px;
+}
+
+.diagram-edge[data-status="warning"] {
+  stroke: var(--admin-color-warning, #d97706);
+}
+
+.diagram-edge[data-status="error"] {
+  stroke: var(--admin-color-danger, #e5484d);
+}
+
+.diagram-edge-label {
+  color: var(--admin-color-text-secondary, #4e5969);
+  background: var(--diagram-canvas-bg);
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.diagram-toolbar {
+  display: flex;
+  align-items: center;
+  gap: var(--admin-space-2, 8px);
+}
+
+.diagram-summary {
+  color: var(--admin-color-text-muted, #86909c);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 1024px) {
+  .clarity-diagram,
+  .admin-diagram {
+    min-height: 420px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .diagram-node,
+  .diagram-edge {
+    transition: none;
+    animation: none;
+  }
+}

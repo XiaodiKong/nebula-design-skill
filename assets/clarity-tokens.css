@@ -1,0 +1,141 @@
+:root {
+  color-scheme: light;
+
+  --clarity-font-sans: Inter, "PingFang SC", "Microsoft YaHei",
+    "Noto Sans CJK SC", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --clarity-color-primary: #246bfd;
+  --clarity-color-primary-hover: #4a85ff;
+  --clarity-color-primary-active: #1b55d9;
+  --clarity-color-primary-subtle: #edf4ff;
+  --clarity-color-ai: #6e5ff8;
+  --clarity-color-ai-subtle: #f3f1ff;
+
+  --clarity-color-text: #1d2129;
+  --clarity-color-text-secondary: #4e5969;
+  --clarity-color-text-muted: #86909c;
+  --clarity-color-text-disabled: #c9cdd4;
+  --clarity-color-bg-page: #f5f7fa;
+  --clarity-color-bg-surface: #ffffff;
+  --clarity-color-bg-hover: #f7f8fa;
+  --clarity-color-border: #e5e6eb;
+  --clarity-color-border-strong: #c9cdd4;
+
+  --clarity-color-success: #00a870;
+  --clarity-color-success-subtle: #e8f7f1;
+  --clarity-color-warning: #d97706;
+  --clarity-color-warning-subtle: #fff7e8;
+  --clarity-color-danger: #e5484d;
+  --clarity-color-danger-subtle: #fff0f0;
+
+  --clarity-space-1: 4px;
+  --clarity-space-2: 8px;
+  --clarity-space-3: 12px;
+  --clarity-space-4: 16px;
+  --clarity-space-6: 24px;
+  --clarity-space-8: 32px;
+
+  --clarity-radius-tag: 4px;
+  --clarity-radius-control: 6px;
+  --clarity-radius-surface: 8px;
+  --clarity-radius-dialog: 10px;
+
+  --clarity-height-control-compact: 28px;
+  --clarity-height-control: 32px;
+  --clarity-height-control-comfortable: 40px;
+  --clarity-height-header: 56px;
+  --clarity-width-sidebar: 224px;
+  --clarity-width-sidebar-collapsed: 64px;
+
+  --clarity-shadow-floating: 0 8px 24px rgb(29 33 41 / 10%);
+  --clarity-focus-ring: 0 0 0 3px rgb(36 107 253 / 20%);
+  --clarity-motion-fast: 120ms;
+  --clarity-motion-base: 180ms;
+
+  /* Shared theme contract. Keep the Clarity names above for compatibility. */
+  --admin-theme-name: "clarity";
+  --admin-font-sans: var(--clarity-font-sans);
+  --admin-color-primary: var(--clarity-color-primary);
+  --admin-color-primary-hover: var(--clarity-color-primary-hover);
+  --admin-color-primary-active: var(--clarity-color-primary-active);
+  --admin-color-primary-subtle: var(--clarity-color-primary-subtle);
+  --admin-color-on-primary: #ffffff;
+  --admin-color-ai: var(--clarity-color-ai);
+  --admin-color-ai-subtle: var(--clarity-color-ai-subtle);
+  --admin-color-text: var(--clarity-color-text);
+  --admin-color-text-secondary: var(--clarity-color-text-secondary);
+  --admin-color-text-muted: var(--clarity-color-text-muted);
+  --admin-color-text-disabled: var(--clarity-color-text-disabled);
+  --admin-color-bg-page: var(--clarity-color-bg-page);
+  --admin-color-bg-surface: var(--clarity-color-bg-surface);
+  --admin-color-bg-hover: var(--clarity-color-bg-hover);
+  --admin-color-bg-elevated: var(--clarity-color-bg-surface);
+  --admin-color-border: var(--clarity-color-border);
+  --admin-color-border-strong: var(--clarity-color-border-strong);
+  --admin-color-success: var(--clarity-color-success);
+  --admin-color-success-subtle: var(--clarity-color-success-subtle);
+  --admin-color-warning: var(--clarity-color-warning);
+  --admin-color-warning-subtle: var(--clarity-color-warning-subtle);
+  --admin-color-danger: var(--clarity-color-danger);
+  --admin-color-danger-subtle: var(--clarity-color-danger-subtle);
+  --admin-sidebar-bg: #172033;
+  --admin-sidebar-text: #cbd2df;
+  --admin-sidebar-muted: #8f9bb3;
+  --admin-sidebar-hover: rgb(255 255 255 / 7%);
+  --admin-sidebar-active: var(--clarity-color-primary);
+  --admin-sidebar-active-text: #ffffff;
+  --admin-avatar-bg: #596780;
+  --admin-diagram-grid: rgb(134 144 156 / 22%);
+  --admin-diagram-group-bg: rgb(245 247 250 / 72%);
+  --admin-diagram-edge: #86909c;
+  --admin-space-1: var(--clarity-space-1);
+  --admin-space-2: var(--clarity-space-2);
+  --admin-space-3: var(--clarity-space-3);
+  --admin-space-4: var(--clarity-space-4);
+  --admin-space-6: var(--clarity-space-6);
+  --admin-space-8: var(--clarity-space-8);
+  --admin-radius-tag: var(--clarity-radius-tag);
+  --admin-radius-control: var(--clarity-radius-control);
+  --admin-radius-surface: var(--clarity-radius-surface);
+  --admin-radius-dialog: var(--clarity-radius-dialog);
+  --admin-height-control-compact: var(--clarity-height-control-compact);
+  --admin-height-control: var(--clarity-height-control);
+  --admin-height-control-comfortable: var(--clarity-height-control-comfortable);
+  --admin-height-header: var(--clarity-height-header);
+  --admin-width-sidebar: var(--clarity-width-sidebar);
+  --admin-width-sidebar-collapsed: var(--clarity-width-sidebar-collapsed);
+  --admin-shadow-floating: var(--clarity-shadow-floating);
+  --admin-focus-ring: var(--clarity-focus-ring);
+  --admin-motion-fast: var(--clarity-motion-fast);
+  --admin-motion-base: var(--clarity-motion-base);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--admin-color-text);
+  background: var(--admin-color-bg-page);
+  font-family: var(--admin-font-sans);
+  font-size: 14px;
+  line-height: 1.5715;
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 2px solid var(--admin-color-primary);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

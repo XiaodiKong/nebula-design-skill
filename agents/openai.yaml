@@ -1,0 +1,4 @@
+interface:
+  display_name: "Backend Product Design"
+  short_description: "使用四套可选主题生成专业企业后台页面与可交互架构图"
+  default_prompt: "Use $backend-design-skill to design and implement an enterprise admin page or interactive technical diagram with the most suitable selectable theme."

@@ -1,0 +1,98 @@
+:root {
+  color-scheme: light;
+
+  --admin-theme-name: "notion";
+  --admin-font-sans: "Notion Sans", Inter, "PingFang SC", "Microsoft YaHei",
+    "Noto Sans CJK SC", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --admin-color-primary: #5645d4;
+  --admin-color-primary-hover: #6756df;
+  --admin-color-primary-active: #4534b3;
+  --admin-color-primary-subtle: #e6e0f5;
+  --admin-color-on-primary: #ffffff;
+  --admin-color-ai: #7b3ff2;
+  --admin-color-ai-subtle: #f1ebfb;
+
+  --admin-color-text: #37352f;
+  --admin-color-text-secondary: #5d5b54;
+  --admin-color-text-muted: #787671;
+  --admin-color-text-disabled: #a4a097;
+  --admin-color-bg-page: #f7f6f3;
+  --admin-color-bg-surface: #ffffff;
+  --admin-color-bg-hover: #f0eeec;
+  --admin-color-bg-elevated: #ffffff;
+  --admin-color-border: #e5e3df;
+  --admin-color-border-strong: #c8c4be;
+
+  --admin-color-success: #1aae39;
+  --admin-color-success-subtle: #d9f3e1;
+  --admin-color-warning: #dd5b00;
+  --admin-color-warning-subtle: #ffe8d4;
+  --admin-color-danger: #e03131;
+  --admin-color-danger-subtle: #fde0ec;
+
+  --admin-sidebar-bg: #f7f6f3;
+  --admin-sidebar-text: #37352f;
+  --admin-sidebar-muted: #787671;
+  --admin-sidebar-hover: #ebe9e5;
+  --admin-sidebar-active: #e6e0f5;
+  --admin-sidebar-active-text: #3a2a99;
+  --admin-avatar-bg: #5645d4;
+  --admin-diagram-grid: rgb(120 118 113 / 18%);
+  --admin-diagram-group-bg: rgb(247 246 243 / 82%);
+  --admin-diagram-edge: #787671;
+
+  --admin-space-1: 4px;
+  --admin-space-2: 8px;
+  --admin-space-3: 12px;
+  --admin-space-4: 16px;
+  --admin-space-6: 24px;
+  --admin-space-8: 32px;
+
+  --admin-radius-tag: 6px;
+  --admin-radius-control: 8px;
+  --admin-radius-surface: 12px;
+  --admin-radius-dialog: 12px;
+
+  --admin-height-control-compact: 30px;
+  --admin-height-control: 36px;
+  --admin-height-control-comfortable: 44px;
+  --admin-height-header: 56px;
+  --admin-width-sidebar: 224px;
+  --admin-width-sidebar-collapsed: 64px;
+
+  --admin-shadow-floating: 0 8px 24px rgb(55 53 47 / 10%);
+  --admin-focus-ring: 0 0 0 3px rgb(86 69 212 / 18%);
+  --admin-motion-fast: 120ms;
+  --admin-motion-base: 180ms;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--admin-color-text);
+  background: var(--admin-color-bg-page);
+  font-family: var(--admin-font-sans);
+  font-size: 14px;
+  line-height: 1.5715;
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 2px solid var(--admin-color-primary);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
