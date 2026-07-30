@@ -46,7 +46,7 @@ description: Design, implement, review, and optimize frontend product experience
 - 产品应用选择 Claude：读取 [references/theme-claude.md](references/theme-claude.md)。
 - 产品应用选择 OpenCode AI：读取 [references/theme-opencode.md](references/theme-opencode.md)。
 - 产品应用选择 Clarity：使用 [references/visual-system.md](references/visual-system.md) 中的 Clarity 规则。
-- 营销官网：必须读取 [references/marketing-page-patterns.md](references/marketing-page-patterns.md) 和 [references/marketing-theme-adaptation.md](references/marketing-theme-adaptation.md)。
+- 营销官网：必须读取 [references/marketing-page-patterns.md](references/marketing-page-patterns.md) 和 [references/marketing-theme-adaptation.md](references/marketing-theme-adaptation.md)，再按选择读取 [Cal.com](references/marketing-theme-cal.md)、[Clarity](references/marketing-theme-clarity.md)、[Notion](references/marketing-theme-notion.md)、[Linear](references/marketing-theme-linear.md)、[Claude](references/marketing-theme-claude.md) 或 [OpenCode AI](references/marketing-theme-opencode.md) 营销规范；用户要求六主题比较或切换器时读取全部六份。
 - 任何字体选择、品牌字体接入或多语言排版：读取 [references/typography-system.md](references/typography-system.md)。
 - 用户未指定主题：默认使用 Cal.com；产品应用再读取 [references/theme-cal.md](references/theme-cal.md)。
 - 产品应用的新页面、页面重构或信息架构：再读取 [references/page-patterns.md](references/page-patterns.md)。

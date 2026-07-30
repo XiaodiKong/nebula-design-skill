@@ -10,8 +10,8 @@
 | Cal.com | 黑白中性、留白、友好 SaaS | 表单、预约、客户成功、轻量工作台 | 通用 SaaS 首页、功能与定价页 |
 | Notion | 暖灰、编辑感、柔和色块、内容优先 | 知识、项目、内容、协作工作区 | 内容产品、模板与协作叙事 |
 | Linear | 近黑画布、薰衣草蓝、精密、低噪声 | 工程、研发、自动化、技术运维 | 开发者产品、发布与功能展示 |
-| Claude | 奶油画布、珊瑚色、衬线标题、人文编辑感 | AI、研究、内容、知识分析 | AI、研究与内容产品叙事 |
-| OpenCode AI | 全局等宽、暖白与终端黑、ASCII、锐利 | AI 编码、研发、日志、终端工作台 | 开发者工具、文档与快速开始 |
+| Claude | 暖黑或奶油画布、陶土色、衬线标题、人文编辑感 | AI、研究、内容、知识分析 | AI、研究与内容产品叙事 |
+| OpenCode AI | 全局等宽、终端黑、高对比、锐利 | AI 编码、研发、日志、终端工作台 | 开发者工具、文档与快速开始 |
 
 ## 决策规则
 
@@ -69,6 +69,7 @@
 
 ## 来源说明
 
-Cal.com、Notion、Linear、Claude 和 OpenCode AI 的视觉资料改编自
-[VoltAgent/awesome-design-md](https://github.com/VoltAgent/awesome-design-md) 中的公开页面分析，仓库采用 MIT License。
+产品应用主题参考
+[VoltAgent/awesome-design-md](https://github.com/VoltAgent/awesome-design-md) 中的公开页面分析；营销主题按
+[marketing-theme-adaptation.md](marketing-theme-adaptation.md) 路由研究各官方公开网站。
 这些主题是面向本 Skill 前端场景的非官方适配，不是相关品牌的官方设计系统、商标授权或像素级复刻。

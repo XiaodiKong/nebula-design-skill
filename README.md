@@ -45,8 +45,8 @@ Skill 会先选择设计表面，再决定布局：
 | Clarity | 深蓝、企业蓝、紧凑清晰 | 风控与数据后台、企业服务和安全官网 |
 | Notion | 暖灰、内容优先、柔和色块 | 知识协作产品、内容型官网与模板展示 |
 | Linear | 近黑画布、薰衣草蓝、低噪声 | 工程工具、开发者官网与产品发布 |
-| Claude | 奶油画布、珊瑚色、衬线标题 | AI 工作台、研究与内容产品叙事 |
-| OpenCode AI | 暖白、终端黑、全局等宽 | AI 编码、终端工作台与开发者入口 |
+| Claude | 暖黑或奶油画布、陶土色、衬线标题 | AI 工作台、研究与内容产品叙事 |
+| OpenCode AI | 终端黑、高对比、全局等宽 | AI 编码、终端工作台与开发者入口 |
 
 用户没有指定主题时始终使用 Cal.com。只有用户明确要求推荐、比较或选择最合适主题时，才会按业务场景推荐其他主题。
 
@@ -180,10 +180,18 @@ Skill 也支持根据描述自动触发，但显式使用 `$nebula-design-skill`
 
 ## Demo
 
-项目包含一个风控对象关系系统页面：
+项目包含产品应用与官网营销两类 Demo。
+
+产品应用 Demo：
 
 ```text
 demo/index.html
+```
+
+官网营销页 Demo：
+
+```text
+demo/marketing.html
 ```
 
 启动本地预览：
@@ -196,9 +204,10 @@ python3 -m http.server 8765
 
 ```text
 http://localhost:8765/demo/index.html
+http://localhost:8765/demo/marketing.html
 ```
 
-Demo 支持：
+产品应用 Demo 支持：
 
 - 六套主题实时切换，首次打开默认为 Cal.com。
 - 搜索对象、按风险状态和时间范围筛选。
@@ -206,6 +215,14 @@ Demo 支持：
 - 画布缩放、适配和状态统计。
 - 右侧对象详情、主要风险链路和关联对象。
 - 导航折叠、用户菜单、操作反馈和主题持久化。
+
+官网营销页 Demo 支持：
+
+- 基于六个官方公开网站研究的营销主题切换，默认使用 Cal.com。
+- 同一价值主张、内容结构和主 CTA 下比较六种官网视觉语言。
+- 响应式顶部导航、产品流程交互、审计证明、FAQ 和本地表单反馈。
+- 不使用相关品牌 Logo、插画、客户名单或虚构商业数据。
+- 移动端布局、键盘焦点、语义 HTML 与 `prefers-reduced-motion`。
 
 ## 项目结构
 
@@ -227,13 +244,20 @@ nebula-design-skill/
 │   ├── surface-selection.md             # 产品应用与营销官网判定
 │   ├── marketing-page-patterns.md       # 营销页面结构与转化规则
 │   ├── marketing-theme-adaptation.md    # 六主题营销场景适配
+│   ├── marketing-theme-cal.md           # Cal.com 官网风格
+│   ├── marketing-theme-clarity.md       # Clarity 官网风格
+│   ├── marketing-theme-notion.md        # Notion 官网风格
+│   ├── marketing-theme-linear.md        # Linear 官网风格
+│   ├── marketing-theme-claude.md        # Claude 官网风格
+│   ├── marketing-theme-opencode.md      # OpenCode AI 官网风格
 │   ├── theme-selection.md               # 主题选择规则
 │   ├── typography-system.md             # 中英文字体与回退
 │   ├── diagram-design.md                # 架构图与关系图规范
 │   ├── page-patterns.md                 # 页面模式
 │   └── ...                              # 组件、实现与场景参考
 └── demo/
-    └── index.html                       # 六主题风控关系图 Demo
+    ├── index.html                       # 六主题风控关系图 Demo
+    └── marketing.html                   # 六主题官网营销页 Demo
 ```
 
 ## 自定义
@@ -263,7 +287,7 @@ nebula-design-skill/
 
 ## 设计来源与说明
 
-Cal.com、Notion、Linear、Claude 和 OpenCode AI 主题参考了 [VoltAgent/awesome-design-md](https://github.com/VoltAgent/awesome-design-md) 中的公开设计分析。
+产品应用主题参考了 [VoltAgent/awesome-design-md](https://github.com/VoltAgent/awesome-design-md) 中的公开设计分析。营销主题进一步研究了 [Cal.com](https://cal.com/)、[Notion](https://www.notion.com/)、[Linear](https://linear.app/)、[Claude by Anthropic](https://www.anthropic.com/claude)、[OpenCode](https://opencode.ai/) 和 [Clarity Design System](https://clarity.design/) 的官方公开网站。
 
 本项目提供的是面向产品应用与营销官网的非官方前端适配，不是相关品牌的官方设计系统、商标授权或像素级复刻。
 
