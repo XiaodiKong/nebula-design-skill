@@ -2,7 +2,7 @@
 
 面向 Codex 的通用前端设计 Skill。它可以把需求转化为产品应用、企业中后台、营销官网、信息架构、交互规则、视觉主题，以及可运行的 HTML 页面或技术关系图。
 
-项目默认使用 **Cal.com** 风格，并提供 Clarity、Notion、Linear、Claude、OpenCode AI 等可选主题。
+项目默认使用 **Cal.com** 风格，并提供 Clarity、Notion、Linear、Claude、OpenCode AI、Palantir 等可选主题。
 
 ## 主要能力
 
@@ -12,7 +12,7 @@
 - 设计仪表盘、管理列表、详情页、表单、配置流程、多面板工作台等中后台页面。
 - 生成系统架构图、层级结构图、流程图、泳道图、数据血缘 DAG、拓扑图、时序图和对象关系图。
 - 支持搜索、筛选、节点聚焦、缩放适配、详情面板和列表降级等图形工作台交互。
-- 提供六套共享语义令牌的视觉主题，支持运行时主题切换。
+- 提供七套共享语义令牌的视觉主题，支持运行时主题切换。
 - 分离中文、英文、标题、正文和代码字体，避免不同主题都回退到同一套中文系统字体。
 - 在已有项目中优先复用现有组件、路由、设计令牌和系统外壳。
 
@@ -47,6 +47,7 @@ Skill 会先选择设计表面，再决定布局：
 | Linear | 近黑画布、薰衣草蓝、低噪声 | 工程工具、开发者官网与产品发布 |
 | Claude | 暖黑或奶油画布、陶土色、衬线标题 | AI 工作台、研究与内容产品叙事 |
 | OpenCode AI | 终端黑、高对比、全局等宽 | AI 编码、终端工作台与开发者入口 |
+| Palantir | 近黑任务画布、Blueprint 蓝、细边界 | Ontology、关键运营、态势感知和工业 AI 官网 |
 
 用户没有指定主题时始终使用 Cal.com。只有用户明确要求推荐、比较或选择最合适主题时，才会按业务场景推荐其他主题。
 
@@ -160,6 +161,12 @@ $nebula-design-skill
 使用 OpenCode AI 风格设计一个构建日志与依赖关系分析页面。
 ```
 
+```text
+$nebula-design-skill
+使用 Palantir 风格设计一个供应链态势感知与异常处置工作台，
+需要对象关系图、时间线、人工确认和完整审计记录。
+```
+
 ### 生成架构图
 
 ```text
@@ -209,7 +216,7 @@ http://localhost:8765/demo/marketing.html
 
 产品应用 Demo 支持：
 
-- 六套主题实时切换，首次打开默认为 Cal.com。
+- 七套主题实时切换，首次打开默认为 Cal.com。
 - 搜索对象、按风险状态和时间范围筛选。
 - 点击节点聚焦直接关系。
 - 画布缩放、适配和状态统计。
@@ -218,8 +225,8 @@ http://localhost:8765/demo/marketing.html
 
 官网营销页 Demo 支持：
 
-- 基于六个官方公开网站研究的营销主题切换，默认使用 Cal.com。
-- 同一价值主张、内容结构和主 CTA 下比较六种官网视觉语言。
+- 基于七个官方公开网站研究的营销主题切换，默认使用 Cal.com。
+- 同一价值主张、内容结构和主 CTA 下比较七种官网视觉语言。
 - 响应式顶部导航、产品流程交互、审计证明、FAQ 和本地表单反馈。
 - 不使用相关品牌 Logo、插画、客户名单或虚构商业数据。
 - 移动端布局、键盘焦点、语义 HTML 与 `prefers-reduced-motion`。
@@ -238,26 +245,29 @@ nebula-design-skill/
 │   ├── linear-tokens.css
 │   ├── claude-tokens.css
 │   ├── opencode-tokens.css
+│   ├── palantir-tokens.css
 │   └── diagram-tokens.css               # 图形工作台语义令牌
 ├── references/
 │   ├── application-shell-selection.md   # 单页面与系统应用判定
 │   ├── surface-selection.md             # 产品应用与营销官网判定
 │   ├── marketing-page-patterns.md       # 营销页面结构与转化规则
-│   ├── marketing-theme-adaptation.md    # 六主题营销场景适配
+│   ├── marketing-theme-adaptation.md    # 七主题营销场景适配
 │   ├── marketing-theme-cal.md           # Cal.com 官网风格
 │   ├── marketing-theme-clarity.md       # Clarity 官网风格
 │   ├── marketing-theme-notion.md        # Notion 官网风格
 │   ├── marketing-theme-linear.md        # Linear 官网风格
 │   ├── marketing-theme-claude.md        # Claude 官网风格
 │   ├── marketing-theme-opencode.md      # OpenCode AI 官网风格
+│   ├── marketing-theme-palantir.md      # Palantir 官网风格
+│   ├── theme-palantir.md                # Palantir 产品应用风格
 │   ├── theme-selection.md               # 主题选择规则
 │   ├── typography-system.md             # 中英文字体与回退
 │   ├── diagram-design.md                # 架构图与关系图规范
 │   ├── page-patterns.md                 # 页面模式
 │   └── ...                              # 组件、实现与场景参考
 └── demo/
-    ├── index.html                       # 六主题风控关系图 Demo
-    └── marketing.html                   # 六主题官网营销页 Demo
+    ├── index.html                       # 七主题风控关系图 Demo
+    └── marketing.html                   # 七主题官网营销页 Demo
 ```
 
 ## 自定义
@@ -287,7 +297,7 @@ nebula-design-skill/
 
 ## 设计来源与说明
 
-产品应用主题参考了 [VoltAgent/awesome-design-md](https://github.com/VoltAgent/awesome-design-md) 中的公开设计分析。营销主题进一步研究了 [Cal.com](https://cal.com/)、[Notion](https://www.notion.com/)、[Linear](https://linear.app/)、[Claude by Anthropic](https://www.anthropic.com/claude)、[OpenCode](https://opencode.ai/) 和 [Clarity Design System](https://clarity.design/) 的官方公开网站。
+Cal.com、Notion、Linear、Claude 和 OpenCode AI 产品应用主题参考了 [VoltAgent/awesome-design-md](https://github.com/VoltAgent/awesome-design-md) 中的公开设计分析；Palantir 产品应用主题参考官方 [Blueprint](https://github.com/palantir/blueprint) 和 [Workshop 设计实践](https://www.palantir.com/docs/foundry/workshop/application-design-best-practices)。营销主题进一步研究了 [Cal.com](https://cal.com/)、[Notion](https://www.notion.com/)、[Linear](https://linear.app/)、[Claude by Anthropic](https://www.anthropic.com/claude)、[OpenCode](https://opencode.ai/)、[Clarity Design System](https://clarity.design/) 和 [Palantir](https://www.palantir.com/) 的官方公开网站。
 
 本项目提供的是面向产品应用与营销官网的非官方前端适配，不是相关品牌的官方设计系统、商标授权或像素级复刻。
 

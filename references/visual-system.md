@@ -173,4 +173,4 @@ font-family: var(--admin-font-body);
 
 ## 暗色模式
 
-Clarity、Cal.com、Notion、Claude 和 OpenCode AI 默认交付浅色；Linear 默认交付暗色。实现暗色时使用语义令牌重新映射，不直接反转颜色；检查表格悬停、状态标签、图表、代码编辑器和弹层对比度。
+Clarity、Cal.com、Notion、Claude 和 OpenCode AI 默认交付浅色；Linear 与 Palantir 默认交付暗色。实现暗色时使用语义令牌重新映射，不直接反转颜色；检查表格悬停、状态标签、图表、代码编辑器和弹层对比度。

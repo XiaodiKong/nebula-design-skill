@@ -69,6 +69,7 @@ pre,
 | Linear | Inter / Geist | Noto Sans SC / 思源黑体 |
 | Claude | Cormorant Garamond / EB Garamond；正文 Inter | Noto Serif SC / 思源宋体；正文 Noto Sans SC |
 | OpenCode | JetBrains Mono / IBM Plex Mono | Sarasa Mono SC / Noto Sans Mono CJK SC |
+| Palantir | Source Sans 3；标题 Geist / Inter | Noto Sans SC / 思源黑体 |
 
 ## 中文排版规则
 
@@ -77,6 +78,7 @@ pre,
 - 中文等宽主题仍要保证 `1.55–1.7` 行高；不要为了终端感压缩行距。
 - 表格和高密度工作台优先可读性。即使 Claude 使用衬线标题，表格、筛选和输入框仍使用无衬线正文。
 - OpenCode 可以全局使用等宽字体，但中文回退字体必须覆盖常用汉字，并检查控件宽度和长文案截断。
+- Palantir 产品应用优先 Source Sans 3 风格正文和紧凑无衬线标题；对象 ID、坐标、时间和技术元数据使用等宽字体。
 
 ## 字体加载验证
 

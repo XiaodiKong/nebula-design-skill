@@ -1,6 +1,6 @@
 # 主题选择与切换
 
-本 Skill 提供六套视觉主题，可应用于产品应用与营销官网。主题只改变视觉语言、字体、密度和组件表面，不决定设计表面，也不改变业务模型、信息架构、权限、状态、转化目标或可访问性要求。
+本 Skill 提供七套视觉主题，可应用于产品应用与营销官网。主题只改变视觉语言、字体、密度和组件表面，不决定设计表面，也不改变业务模型、信息架构、权限、状态、转化目标或可访问性要求。
 
 ## 选择矩阵
 
@@ -12,13 +12,14 @@
 | Linear | 近黑画布、薰衣草蓝、精密、低噪声 | 工程、研发、自动化、技术运维 | 开发者产品、发布与功能展示 |
 | Claude | 暖黑或奶油画布、陶土色、衬线标题、人文编辑感 | AI、研究、内容、知识分析 | AI、研究与内容产品叙事 |
 | OpenCode AI | 全局等宽、终端黑、高对比、锐利 | AI 编码、研发、日志、终端工作台 | 开发者工具、文档与快速开始 |
+| Palantir | 近黑任务画布、Blueprint 蓝、细边界、高密度 | Ontology、关键运营、态势感知、关系与调度 | 企业 AI、工业平台、任务与影响叙事 |
 
 ## 决策规则
 
 1. 用户明确指定主题时直接使用，不混入其他主题的标志性表面。
-2. 用户要求提供选择时，给出六个同结构的小型预览或实现主题切换器。
+2. 用户要求提供选择时，给出七个同结构的小型预览或实现主题切换器。
 3. 用户未指定时默认使用 Cal.com。
-4. 只有用户明确要求推荐、比较或选择最合适主题时，才按场景建议：高密度风控与数据后台使用 Clarity；内容、知识和协作工具使用 Notion；暗色工程工具使用 Linear；人文 AI 产品使用 Claude；终端与编码工具使用 OpenCode AI。业务类型本身不能自动覆盖 Cal.com 默认值。
+4. 只有用户明确要求推荐、比较或选择最合适主题时，才按场景建议：高密度风控与数据后台使用 Clarity；内容、知识和协作工具使用 Notion；暗色工程工具使用 Linear；人文 AI 产品使用 Claude；终端与编码工具使用 OpenCode AI；关键运营、Ontology、态势感知和多面板任务控制台使用 Palantir。业务类型本身不能自动覆盖 Cal.com 默认值。
 5. 先按 [surface-selection.md](surface-selection.md) 判断产品应用或营销官网，再套用主题；主题不决定导航结构或页面类型。
 6. 营销官网按 [marketing-theme-adaptation.md](marketing-theme-adaptation.md) 转译主题，不直接复用后台侧栏、高密度表格或工具栏。
 7. 主题选择不会删除业务语义色。Linear 等低彩度主题仍要为错误、警告和成功提供可辨识状态，但把颜色限制在状态组件内。
@@ -35,8 +36,9 @@
 - Linear：[assets/linear-tokens.css](../assets/linear-tokens.css)
 - Claude：[assets/claude-tokens.css](../assets/claude-tokens.css)
 - OpenCode AI：[assets/opencode-tokens.css](../assets/opencode-tokens.css)
+- Palantir：[assets/palantir-tokens.css](../assets/palantir-tokens.css)
 
-六套文件都暴露同一组 `--admin-*` 语义变量，包括分离的中英文字体令牌。组件只依赖语义变量，不依赖主题名称：
+七套文件都暴露同一组 `--admin-*` 语义变量，包括分离的中英文字体令牌。组件只依赖语义变量，不依赖主题名称：
 
 ```css
 .primary-button {
@@ -48,9 +50,9 @@
 
 需要运行时切换时：
 
-1. 把六套令牌放在 `[data-admin-theme="..."]` 作用域，或把选中的令牌样式表启用。
+1. 把七套令牌放在 `[data-admin-theme="..."]` 作用域，或把选中的令牌样式表启用。
 2. 把选择持久化到 `localStorage`；首次加载尊重产品默认值。
-3. 同步设置 `color-scheme`，避免 Linear 暗色主题出现错误的系统控件。
+3. 同步设置 `color-scheme`，避免 Linear、Palantir 等暗色主题出现错误的系统控件。
 4. 切换后检查图表、弹层、滚动条、空态和焦点环，不只检查按钮颜色。
 5. 避免让主题切换引起布局尺寸大幅变化；字体、圆角和密度变化应保持主任务位置稳定。
 
@@ -69,7 +71,9 @@
 
 ## 来源说明
 
-产品应用主题参考
-[VoltAgent/awesome-design-md](https://github.com/VoltAgent/awesome-design-md) 中的公开页面分析；营销主题按
+Cal.com、Notion、Linear、Claude 和 OpenCode AI 产品主题参考
+[VoltAgent/awesome-design-md](https://github.com/VoltAgent/awesome-design-md) 中的公开页面分析；Palantir 产品主题参考官方
+[Blueprint](https://github.com/palantir/blueprint) 与
+[Workshop 设计实践](https://www.palantir.com/docs/foundry/workshop/application-design-best-practices)；营销主题按
 [marketing-theme-adaptation.md](marketing-theme-adaptation.md) 路由研究各官方公开网站。
 这些主题是面向本 Skill 前端场景的非官方适配，不是相关品牌的官方设计系统、商标授权或像素级复刻。

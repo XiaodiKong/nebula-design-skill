@@ -1,0 +1,127 @@
+:root {
+  color-scheme: dark;
+
+  --admin-theme-name: "palantir";
+  --admin-font-latin-body: "Source Sans Pro", "Source Sans 3", Inter,
+    "Segoe UI";
+  --admin-font-cjk-body: "Noto Sans SC", "Source Han Sans SC", "PingFang SC",
+    "Microsoft YaHei";
+  --admin-font-latin-display: "Alliance No. 1", Geist, "Arial Narrow", Inter;
+  --admin-font-cjk-display: "Noto Sans SC", "Source Han Sans SC",
+    "PingFang SC", "Microsoft YaHei";
+  --admin-font-mono: "IBM Plex Mono", "JetBrains Mono", "SFMono-Regular",
+    Menlo, Consolas, "Sarasa Mono SC", "Noto Sans Mono CJK SC", monospace;
+  --admin-font-body:
+    var(--admin-font-latin-body),
+    var(--admin-font-cjk-body),
+    sans-serif;
+  --admin-font-display:
+    var(--admin-font-latin-display),
+    var(--admin-font-cjk-display),
+    sans-serif;
+  --admin-font-sans: var(--admin-font-body);
+
+  --admin-color-primary: #2d72d2;
+  --admin-color-primary-hover: #4c90f0;
+  --admin-color-primary-active: #215db0;
+  --admin-color-primary-subtle: #1f3b61;
+  --admin-color-on-primary: #ffffff;
+  --admin-color-ai: #8b5cf6;
+  --admin-color-ai-subtle: #2f2552;
+
+  --admin-color-text: #f6f7f9;
+  --admin-color-text-secondary: #c5cbd3;
+  --admin-color-text-muted: #9aa5b1;
+  --admin-color-text-disabled: #738091;
+  --admin-color-bg-page: #111418;
+  --admin-color-bg-surface: #1c2127;
+  --admin-color-bg-hover: #252a31;
+  --admin-color-bg-elevated: #252a31;
+  --admin-color-border: #383e47;
+  --admin-color-border-strong: #5f6b7c;
+
+  --admin-color-success: #32a467;
+  --admin-color-success-subtle: #1d3c2b;
+  --admin-color-warning: #d1980b;
+  --admin-color-warning-subtle: #473b18;
+  --admin-color-danger: #cd4246;
+  --admin-color-danger-subtle: #4a2428;
+
+  --admin-sidebar-bg: #0b0c0e;
+  --admin-sidebar-text: #c5cbd3;
+  --admin-sidebar-muted: #8f99a8;
+  --admin-sidebar-hover: #1c2127;
+  --admin-sidebar-active: #2d72d2;
+  --admin-sidebar-active-text: #ffffff;
+  --admin-sidebar-border: #2f343c;
+  --admin-avatar-bg: #8b5cf6;
+  --admin-diagram-grid: rgb(143 153 168 / 24%);
+  --admin-diagram-group-bg: rgb(28 33 39 / 82%);
+  --admin-diagram-edge: #8f99a8;
+
+  --admin-space-1: 4px;
+  --admin-space-2: 8px;
+  --admin-space-3: 12px;
+  --admin-space-4: 16px;
+  --admin-space-6: 24px;
+  --admin-space-8: 32px;
+
+  --admin-radius-tag: 2px;
+  --admin-radius-control: 3px;
+  --admin-radius-surface: 4px;
+  --admin-radius-dialog: 4px;
+
+  --admin-height-control-compact: 28px;
+  --admin-height-control: 32px;
+  --admin-height-control-comfortable: 36px;
+  --admin-height-header: 52px;
+  --admin-width-sidebar: 224px;
+  --admin-width-sidebar-collapsed: 64px;
+
+  --admin-shadow-floating: 0 12px 32px rgb(0 0 0 / 38%);
+  --admin-focus-ring: 0 0 0 3px rgb(76 144 240 / 30%);
+  --admin-motion-fast: 100ms;
+  --admin-motion-base: 160ms;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--admin-color-text);
+  background: var(--admin-color-bg-page);
+  font-family: var(--admin-font-body);
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--admin-font-display);
+}
+
+code,
+kbd,
+pre {
+  font-family: var(--admin-font-mono);
+}
+
+:focus-visible {
+  outline: 2px solid #4c90f0;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

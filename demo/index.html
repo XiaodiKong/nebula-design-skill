@@ -315,6 +315,60 @@
       --handling: #9a4fa0;
     }
 
+    html[data-theme="palantir"] {
+      color-scheme: dark;
+      --font-latin-body: "Source Sans Pro", "Source Sans 3", Inter, "Segoe UI";
+      --font-cjk-body: "Noto Sans SC", "Source Han Sans SC", "PingFang SC", "Microsoft YaHei";
+      --font-latin-display: "Alliance No. 1", Geist, "Arial Narrow", Inter;
+      --font-cjk-display: "Noto Sans SC", "Source Han Sans SC", "PingFang SC", "Microsoft YaHei";
+      --font-mono: "IBM Plex Mono", "JetBrains Mono", "SFMono-Regular", Consolas, "Noto Sans Mono CJK SC", monospace;
+      --font-body: var(--font-latin-body), var(--font-cjk-body), system-ui, sans-serif;
+      --font-display: var(--font-latin-display), var(--font-cjk-display), system-ui, sans-serif;
+      --primary: #2d72d2;
+      --primary-hover: #4c90f0;
+      --primary-active: #215db0;
+      --primary-subtle: #1f3b61;
+      --text: #f6f7f9;
+      --text-secondary: #c5cbd3;
+      --text-muted: #9aa5b1;
+      --text-disabled: #738091;
+      --page-bg: #111418;
+      --surface: #1c2127;
+      --surface-hover: #252a31;
+      --surface-elevated: #252a31;
+      --border: #383e47;
+      --border-strong: #5f6b7c;
+      --on-primary: #ffffff;
+      --success: #32a467;
+      --success-subtle: #1d3c2b;
+      --warning: #d1980b;
+      --warning-subtle: #473b18;
+      --danger: #cd4246;
+      --danger-subtle: #4a2428;
+      --purple: #8b5cf6;
+      --purple-subtle: #2f2552;
+      --sidebar-bg: #0b0c0e;
+      --sidebar-text: #c5cbd3;
+      --sidebar-muted: #8f99a8;
+      --sidebar-hover: #1c2127;
+      --sidebar-hover-text: #f6f7f9;
+      --sidebar-active: #2d72d2;
+      --sidebar-active-text: #ffffff;
+      --sidebar-border: #2f343c;
+      --avatar-bg: #8b5cf6;
+      --radius-control: 3px;
+      --radius-surface: 4px;
+      --shadow-floating: 0 12px 32px rgb(0 0 0 / 38%);
+      --focus-ring: 0 0 0 3px rgb(76 144 240 / 30%);
+      --graph-bg: #15191e;
+      --graph-grid: rgb(143 153 168 / 24%);
+      --match-ring: 0 0 0 2px rgb(76 144 240 / 24%);
+      --identity: #4c90f0;
+      --event: #d1980b;
+      --decision: #32a467;
+      --handling: #a78bfa;
+    }
+
     * {
       box-sizing: border-box;
     }
@@ -1319,6 +1373,44 @@
       padding: 0;
     }
 
+    html[data-theme="palantir"] body {
+      background-image:
+        linear-gradient(rgb(143 153 168 / 5%) 1px, transparent 1px),
+        linear-gradient(90deg, rgb(143 153 168 / 5%) 1px, transparent 1px);
+      background-size: 32px 32px;
+    }
+
+    html[data-theme="palantir"] .brand-mark,
+    html[data-theme="palantir"] .avatar,
+    html[data-theme="palantir"] .nav-item,
+    html[data-theme="palantir"] .button,
+    html[data-theme="palantir"] .workbench,
+    html[data-theme="palantir"] .graph-node,
+    html[data-theme="palantir"] .toast {
+      border-radius: 3px;
+    }
+
+    html[data-theme="palantir"] .topbar,
+    html[data-theme="palantir"] .filter-bar,
+    html[data-theme="palantir"] .canvas-toolbar,
+    html[data-theme="palantir"] .canvas-statusbar {
+      background: rgb(28 33 39 / 94%);
+      backdrop-filter: blur(12px);
+    }
+
+    html[data-theme="palantir"] .page-title {
+      font-weight: 500;
+      letter-spacing: -0.025em;
+    }
+
+    html[data-theme="palantir"] .nav-group-title,
+    html[data-theme="palantir"] .details-kicker,
+    html[data-theme="palantir"] .canvas-statusbar {
+      font-family: var(--font-mono);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
     @media (max-width: 1120px) {
       .theme-picker-label {
         display: none;
@@ -1573,6 +1665,7 @@
               <option value="linear">Linear</option>
               <option value="claude">Claude</option>
               <option value="opencode">OpenCode AI</option>
+              <option value="palantir">Palantir</option>
             </select>
           </label>
           <span class="environment-badge"><span class="environment-dot"></span>生产环境</span>
@@ -1738,7 +1831,8 @@
         notion: "Notion",
         linear: "Linear",
         claude: "Claude",
-        opencode: "OpenCode AI"
+        opencode: "OpenCode AI",
+        palantir: "Palantir"
       };
       const allowedThemes = new Set(Object.keys(themeNames));
       let initialTheme = document.documentElement.dataset.theme || "cal";

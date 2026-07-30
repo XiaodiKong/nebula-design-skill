@@ -1,11 +1,11 @@
 ---
 name: nebula-design-skill
-description: Design, implement, review, and optimize frontend product experiences, enterprise applications, marketing websites, and HTML technical diagrams. Determine product app vs marketing site; for product apps choose focused page vs full system shell. Use for landing, feature, pricing, and launch pages; dashboards, CRM, risk/data/permission systems, workflows, tables, forms, AI workbenches; architecture, hierarchy, flow, lineage, topology, sequence, and relationship diagrams; information architecture, UI copy, components, theme tokens, typography, and production frontend code. Use Cal.com by default and support Clarity, Notion, Linear, Claude, and OpenCode AI themes with separate Chinese/Latin font stacks.
+description: Design, implement, review, and optimize frontend product experiences, enterprise applications, marketing websites, and HTML technical diagrams. Determine product app vs marketing site; for product apps choose focused page vs full system shell. Use for landing, feature, pricing, and launch pages; dashboards, CRM, risk/data/permission systems, workflows, tables, forms, AI workbenches; architecture, hierarchy, flow, lineage, topology, sequence, and relationship diagrams; information architecture, UI copy, components, theme tokens, typography, and production frontend code. Use Cal.com by default and support Clarity, Notion, Linear, Claude, OpenCode AI, and Palantir themes with separate Chinese/Latin font stacks.
 ---
 
 # Nebula Design
 
-把模糊需求转化为清晰、可操作、可实现的前端体验，覆盖产品应用、企业中后台、营销官网与 HTML 技术图。支持 Clarity、Cal.com、Notion、Linear、Claude 和 OpenCode AI 六套主题；Cal.com 是默认主题。无论选择哪种视觉语言，都优先保证用户目标、信息层级、可信内容、状态语义和可访问性。
+把模糊需求转化为清晰、可操作、可实现的前端体验，覆盖产品应用、企业中后台、营销官网与 HTML 技术图。支持 Clarity、Cal.com、Notion、Linear、Claude、OpenCode AI 和 Palantir 七套主题；Cal.com 是默认主题。无论选择哪种视觉语言，都优先保证用户目标、信息层级、可信内容、状态语义和可访问性。
 
 ## 先判定设计表面
 
@@ -45,8 +45,9 @@ description: Design, implement, review, and optimize frontend product experience
 - 产品应用选择 Linear：读取 [references/theme-linear.md](references/theme-linear.md)。
 - 产品应用选择 Claude：读取 [references/theme-claude.md](references/theme-claude.md)。
 - 产品应用选择 OpenCode AI：读取 [references/theme-opencode.md](references/theme-opencode.md)。
+- 产品应用选择 Palantir：读取 [references/theme-palantir.md](references/theme-palantir.md)。
 - 产品应用选择 Clarity：使用 [references/visual-system.md](references/visual-system.md) 中的 Clarity 规则。
-- 营销官网：必须读取 [references/marketing-page-patterns.md](references/marketing-page-patterns.md) 和 [references/marketing-theme-adaptation.md](references/marketing-theme-adaptation.md)，再按选择读取 [Cal.com](references/marketing-theme-cal.md)、[Clarity](references/marketing-theme-clarity.md)、[Notion](references/marketing-theme-notion.md)、[Linear](references/marketing-theme-linear.md)、[Claude](references/marketing-theme-claude.md) 或 [OpenCode AI](references/marketing-theme-opencode.md) 营销规范；用户要求六主题比较或切换器时读取全部六份。
+- 营销官网：必须读取 [references/marketing-page-patterns.md](references/marketing-page-patterns.md) 和 [references/marketing-theme-adaptation.md](references/marketing-theme-adaptation.md)，再按选择读取 [Cal.com](references/marketing-theme-cal.md)、[Clarity](references/marketing-theme-clarity.md)、[Notion](references/marketing-theme-notion.md)、[Linear](references/marketing-theme-linear.md)、[Claude](references/marketing-theme-claude.md)、[OpenCode AI](references/marketing-theme-opencode.md) 或 [Palantir](references/marketing-theme-palantir.md) 营销规范；用户要求七主题比较或切换器时读取全部七份。
 - 任何字体选择、品牌字体接入或多语言排版：读取 [references/typography-system.md](references/typography-system.md)。
 - 用户未指定主题：默认使用 Cal.com；产品应用再读取 [references/theme-cal.md](references/theme-cal.md)。
 - 产品应用的新页面、页面重构或信息架构：再读取 [references/page-patterns.md](references/page-patterns.md)。
@@ -54,7 +55,7 @@ description: Design, implement, review, and optimize frontend product experience
 - 架构图、层级图、流程图、血缘、拓扑、DAG、时序或关系图：必须读取 [references/diagram-design.md](references/diagram-design.md)。
 - 编码、验收或设计评审：再读取 [references/implementation-and-review.md](references/implementation-and-review.md)。
 - 产品应用需要领域示例或不确定页面组织方式：读取 [references/example-blueprints.md](references/example-blueprints.md)。
-- 新项目需要基础视觉变量时，从 [references/theme-selection.md](references/theme-selection.md) 指向的六套 `assets/*-tokens.css` 中选择一套；已有设计令牌时映射 `--admin-*` 语义，不要并行维护第二套冲突令牌。
+- 新项目需要基础视觉变量时，从 [references/theme-selection.md](references/theme-selection.md) 指向的七套 `assets/*-tokens.css` 中选择一套；已有设计令牌时映射 `--admin-*` 语义，不要并行维护第二套冲突令牌。
 - 实现 HTML 图形工作台且项目缺少图形令牌时，再使用 [assets/diagram-tokens.css](assets/diagram-tokens.css)。
 
 ## 工作流
@@ -120,12 +121,12 @@ description: Design, implement, review, and optimize frontend product experience
 
 ### 6. 选择并应用视觉主题
 
-用户明确指定主题时直接使用。用户要求提供风格选择时，使用同一业务内容制作六套可比较预览或主题切换器；不要用不同信息架构制造虚假的风格差异。营销官网按 [references/marketing-theme-adaptation.md](references/marketing-theme-adaptation.md) 转译主题，不照搬中后台侧栏与高密度组件。
+用户明确指定主题时直接使用。用户要求提供风格选择时，使用同一业务内容制作七套可比较预览或主题切换器；不要用不同信息架构制造虚假的风格差异。营销官网按 [references/marketing-theme-adaptation.md](references/marketing-theme-adaptation.md) 转译主题，不照搬中后台侧栏与高密度组件。
 
 用户未指定时：
 
 - 默认使用 Cal.com，不因表面或业务类型自动改成其他主题。
-- 只有用户明确要求推荐、比较或“选择最合适主题”时，才按场景建议：高密度风控与数据后台可选 Clarity；内容、知识和协作工作区可选 Notion；暗色工程、研发与运维工具可选 Linear；AI 助手、研究与内容分析可选 Claude；AI 编码、终端与日志工具可选 OpenCode AI。
+- 只有用户明确要求推荐、比较或“选择最合适主题”时，才按场景建议：高密度风控与数据后台可选 Clarity；内容、知识和协作工作区可选 Notion；暗色工程、研发与运维工具可选 Linear；AI 助手、研究与内容分析可选 Claude；AI 编码、终端与日志工具可选 OpenCode AI；关键运营、Ontology、态势感知与多面板任务控制台可选 Palantir。
 
 按 [references/typography-system.md](references/typography-system.md) 分离中文、英文、标题、正文和等宽字体。自定义字体只有在项目已有合法资产时使用。这些参考品牌主题是基于公开页面分析的非官方适配，不能声称使用官方设计系统。
 
