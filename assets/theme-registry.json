@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "defaultTheme": "cal",
+  "semanticStateTokens": "assets/semantic-state-tokens.css",
+  "themes": [
+    {
+      "id": "cal",
+      "label": "Cal.com",
+      "colorScheme": "light",
+      "tokens": "assets/cal-tokens.css",
+      "productReference": "references/theme-cal.md",
+      "marketingReference": "references/marketing-theme-cal.md",
+      "recommendedFor": ["general-product", "saas-marketing", "forms"]
+    },
+    {
+      "id": "clarity",
+      "label": "Clarity",
+      "colorScheme": "light",
+      "tokens": "assets/clarity-tokens.css",
+      "productReference": "references/visual-system.md",
+      "marketingReference": "references/marketing-theme-clarity.md",
+      "recommendedFor": ["risk", "data-platform", "enterprise"]
+    },
+    {
+      "id": "notion",
+      "label": "Notion",
+      "colorScheme": "light",
+      "tokens": "assets/notion-tokens.css",
+      "productReference": "references/theme-notion.md",
+      "marketingReference": "references/marketing-theme-notion.md",
+      "recommendedFor": ["knowledge", "content", "collaboration"]
+    },
+    {
+      "id": "linear",
+      "label": "Linear",
+      "colorScheme": "dark",
+      "tokens": "assets/linear-tokens.css",
+      "productReference": "references/theme-linear.md",
+      "marketingReference": "references/marketing-theme-linear.md",
+      "recommendedFor": ["engineering", "automation", "operations"]
+    },
+    {
+      "id": "claude",
+      "label": "Claude",
+      "colorScheme": "light",
+      "tokens": "assets/claude-tokens.css",
+      "productReference": "references/theme-claude.md",
+      "marketingReference": "references/marketing-theme-claude.md",
+      "recommendedFor": ["ai-assistant", "research", "content-analysis"]
+    },
+    {
+      "id": "opencode",
+      "label": "OpenCode AI",
+      "colorScheme": "light",
+      "tokens": "assets/opencode-tokens.css",
+      "productReference": "references/theme-opencode.md",
+      "marketingReference": "references/marketing-theme-opencode.md",
+      "recommendedFor": ["ai-coding", "terminal", "logs"]
+    },
+    {
+      "id": "palantir",
+      "label": "Palantir",
+      "colorScheme": "dark",
+      "tokens": "assets/palantir-tokens.css",
+      "productReference": "references/theme-palantir.md",
+      "marketingReference": "references/marketing-theme-palantir.md",
+      "recommendedFor": ["ontology", "critical-operations", "situational-awareness"]
+    }
+  ]
+}

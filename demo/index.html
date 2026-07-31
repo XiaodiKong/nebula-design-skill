@@ -55,11 +55,10 @@
       --avatar-bg: #596780;
       --graph-bg: #fbfcfe;
       --graph-grid: rgb(134 144 156 / 22%);
-      --match-ring: 0 0 0 2px rgb(36 107 253 / 14%);
-      --identity: #246bfd;
-      --event: #c46b20;
-      --decision: #00a870;
-      --handling: #c6538c;
+    }
+
+    html[data-theme="clarity"] {
+      color-scheme: light;
     }
 
     html[data-theme="cal"] {
@@ -106,7 +105,6 @@
       --focus-ring: 0 0 0 3px rgb(17 17 17 / 16%);
       --graph-bg: #ffffff;
       --graph-grid: rgb(107 114 128 / 18%);
-      --match-ring: 0 0 0 2px rgb(17 17 17 / 13%);
     }
 
     html[data-theme="notion"] {
@@ -153,11 +151,6 @@
       --focus-ring: 0 0 0 3px rgb(86 69 212 / 18%);
       --graph-bg: #fcfbf9;
       --graph-grid: rgb(120 118 113 / 18%);
-      --match-ring: 0 0 0 2px rgb(86 69 212 / 15%);
-      --identity: #4d73c8;
-      --event: #bd6b32;
-      --decision: #2a9d6f;
-      --handling: #a84f7d;
     }
 
     html[data-theme="linear"] {
@@ -204,11 +197,6 @@
       --focus-ring: 0 0 0 3px rgb(94 106 210 / 30%);
       --graph-bg: #080809;
       --graph-grid: rgb(98 102 109 / 28%);
-      --match-ring: 0 0 0 2px rgb(94 106 210 / 28%);
-      --identity: #7684e8;
-      --event: #c88758;
-      --decision: #55b486;
-      --handling: #b46d94;
     }
 
     html[data-theme="claude"] {
@@ -256,11 +244,6 @@
       --focus-ring: 0 0 0 3px rgb(204 120 92 / 22%);
       --graph-bg: #fffefa;
       --graph-grid: rgb(108 106 100 / 18%);
-      --match-ring: 0 0 0 2px rgb(204 120 92 / 18%);
-      --identity: #8a6f63;
-      --event: #cc785c;
-      --decision: #4b8f5d;
-      --handling: #9a5f7a;
     }
 
     html[data-theme="opencode"] {
@@ -308,11 +291,6 @@
       --focus-ring: 0 0 0 3px rgb(0 122 255 / 22%);
       --graph-bg: #fdfcfc;
       --graph-grid: rgb(15 0 0 / 12%);
-      --match-ring: 0 0 0 2px rgb(0 122 255 / 18%);
-      --identity: #007aff;
-      --event: #a35f00;
-      --decision: #248a43;
-      --handling: #9a4fa0;
     }
 
     html[data-theme="palantir"] {
@@ -362,11 +340,6 @@
       --focus-ring: 0 0 0 3px rgb(76 144 240 / 30%);
       --graph-bg: #15191e;
       --graph-grid: rgb(143 153 168 / 24%);
-      --match-ring: 0 0 0 2px rgb(76 144 240 / 24%);
-      --identity: #4c90f0;
-      --event: #d1980b;
-      --decision: #32a467;
-      --handling: #a78bfa;
     }
 
     * {
@@ -952,6 +925,28 @@
       border-radius: 50%;
     }
 
+    .legend-code,
+    .node-type-code {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 auto;
+      color: var(--text-secondary);
+      font-family: var(--font-mono);
+      font-size: 9px;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: 0.02em;
+      background: var(--surface-hover);
+      border: 1px solid var(--border-strong);
+      border-radius: 3px;
+    }
+
+    .legend-code {
+      width: 25px;
+      height: 17px;
+    }
+
     .legend-line {
       width: 20px;
       height: 0;
@@ -1086,14 +1081,13 @@
     .graph-node {
       position: absolute;
       z-index: 2;
-      width: 138px;
+      width: 148px;
       min-height: 54px;
       padding: 7px 10px 8px;
       color: var(--text);
       text-align: left;
       background: var(--surface);
       border: 1px solid var(--border);
-      border-left: 3px solid var(--node-color);
       border-radius: var(--radius-control);
       cursor: pointer;
       transform: translate(-50%, -50%);
@@ -1107,14 +1101,12 @@
     .graph-node:hover {
       background: var(--surface-hover);
       border-color: var(--border-strong);
-      border-left-color: var(--node-color);
     }
 
     .graph-node[aria-pressed="true"] {
-      background: var(--primary-subtle);
-      border-color: var(--primary);
-      border-left-color: var(--primary);
-      box-shadow: var(--focus-ring);
+      background: color-mix(in srgb, var(--text) 7%, var(--surface));
+      border-color: var(--text);
+      box-shadow: 0 0 0 2px color-mix(in srgb, var(--text) 16%, transparent);
     }
 
     .graph-node.is-related {
@@ -1127,8 +1119,14 @@
     }
 
     .graph-node.is-match {
-      border-color: var(--primary);
-      box-shadow: var(--match-ring);
+      background: color-mix(in srgb, var(--text) 6%, var(--surface));
+      border-color: var(--border-strong);
+      box-shadow: 0 0 0 2px color-mix(in srgb, var(--text) 12%, transparent);
+    }
+
+    .graph-node[aria-pressed="true"].is-match {
+      border-color: var(--text);
+      box-shadow: 0 0 0 2px color-mix(in srgb, var(--text) 16%, transparent);
     }
 
     .node-title-row {
@@ -1145,7 +1143,14 @@
       border-radius: 50%;
     }
 
+    .node-type-code {
+      width: 27px;
+      height: 17px;
+    }
+
     .node-title {
+      min-width: 0;
+      flex: 1;
       overflow: hidden;
       font-weight: 600;
       text-overflow: ellipsis;
@@ -1749,10 +1754,13 @@
           <div class="canvas-pane">
             <div class="canvas-toolbar">
               <div class="legend" aria-label="图例">
-                <span class="legend-item"><span class="legend-dot" style="--legend-color:var(--identity)"></span>身份主体</span>
-                <span class="legend-item"><span class="legend-dot" style="--legend-color:var(--event)"></span>行为事件</span>
-                <span class="legend-item"><span class="legend-dot" style="--legend-color:var(--decision)"></span>决策能力</span>
-                <span class="legend-item"><span class="legend-dot" style="--legend-color:var(--handling)"></span>处置闭环</span>
+                <span class="legend-item"><span class="legend-code">ID</span>身份主体</span>
+                <span class="legend-item"><span class="legend-code">EVT</span>行为事件</span>
+                <span class="legend-item"><span class="legend-code">DEC</span>决策能力</span>
+                <span class="legend-item"><span class="legend-code">ACT</span>处置闭环</span>
+                <span class="legend-item"><span class="legend-dot" style="--legend-color:var(--success)"></span>正常</span>
+                <span class="legend-item"><span class="legend-dot" style="--legend-color:var(--warning)"></span>关注</span>
+                <span class="legend-item"><span class="legend-dot" style="--legend-color:var(--danger)"></span>高风险</span>
                 <span class="legend-item"><span class="legend-line"></span>对象关系</span>
                 <span class="legend-item"><span class="legend-line is-dashed"></span>数据输入 / 反哺</span>
               </div>
@@ -1911,10 +1919,10 @@
       };
 
       const groupMeta = {
-        identity: { label: "身份主体", color: "var(--identity)" },
-        event: { label: "行为事件", color: "var(--event)" },
-        decision: { label: "决策能力", color: "var(--decision)" },
-        handling: { label: "处置闭环", color: "var(--handling)" }
+        identity: { label: "身份主体", code: "ID" },
+        event: { label: "行为事件", code: "EVT" },
+        decision: { label: "决策能力", code: "DEC" },
+        handling: { label: "处置闭环", code: "ACT" }
       };
 
       const toneMeta = {
@@ -1996,13 +2004,20 @@
           button.type = "button";
           button.className = "graph-node";
           button.dataset.node = node.id;
-          button.style.setProperty("--node-color", groupMeta[node.group].color);
+          button.dataset.group = node.group;
           button.style.setProperty("--status-color", toneMeta[node.tone].color);
           button.setAttribute("aria-pressed", "false");
-          button.setAttribute("aria-label", `${node.label}，${node.meta}，状态${node.status}`);
+          button.setAttribute(
+            "aria-label",
+            `${groupMeta[node.group].label}，${node.label}，${node.meta}，状态${node.status}`
+          );
 
           const titleRow = document.createElement("span");
           titleRow.className = "node-title-row";
+          const typeCode = document.createElement("span");
+          typeCode.className = "node-type-code";
+          typeCode.textContent = groupMeta[node.group].code;
+          typeCode.setAttribute("aria-hidden", "true");
           const status = document.createElement("span");
           status.className = "node-status";
           status.setAttribute("aria-hidden", "true");
@@ -2013,7 +2028,7 @@
           meta.className = "node-meta";
           meta.textContent = node.meta;
 
-          titleRow.append(status, title);
+          titleRow.append(typeCode, status, title);
           button.append(titleRow, meta);
           nodeLayer.append(button);
           nodeElements.set(node.id, button);

@@ -1,15 +1,36 @@
 :root {
-  --diagram-canvas-bg: var(--admin-color-bg-surface, #ffffff);
+  --diagram-canvas-bg: var(
+    --nebula-ui-surface,
+    var(--admin-color-bg-surface, #ffffff)
+  );
   --diagram-grid-dot: var(--admin-diagram-grid, rgb(134 144 156 / 22%));
-  --diagram-node-bg: var(--admin-color-bg-surface, #ffffff);
-  --diagram-node-border: var(--admin-color-border, #e5e6eb);
-  --diagram-node-border-hover: var(--admin-color-border-strong, #c9cdd4);
-  --diagram-node-border-selected: var(--admin-color-primary, #246bfd);
-  --diagram-group-bg: var(--admin-diagram-group-bg, rgb(245 247 250 / 72%));
+  --diagram-node-bg: var(
+    --nebula-node-fill,
+    var(--admin-color-bg-surface, #ffffff)
+  );
+  --diagram-node-border: var(
+    --nebula-node-border,
+    var(--admin-color-border, #e5e6eb)
+  );
+  --diagram-node-border-hover: var(
+    --nebula-ui-border-strong,
+    var(--admin-color-border-strong, #c9cdd4)
+  );
+  --diagram-node-border-selected: var(
+    --nebula-node-border-selected,
+    var(--admin-color-text, #1d2129)
+  );
+  --diagram-group-bg: var(
+    --nebula-node-group-bg,
+    var(--admin-diagram-group-bg, rgb(245 247 250 / 72%))
+  );
   --diagram-group-border: var(--admin-color-border, #e5e6eb);
-  --diagram-edge: var(--admin-diagram-edge, #86909c);
+  --diagram-edge: var(--nebula-edge, var(--admin-diagram-edge, #86909c));
   --diagram-edge-muted: var(--admin-color-border-strong, #c9cdd4);
-  --diagram-edge-active: var(--admin-color-primary, #246bfd);
+  --diagram-edge-active: var(
+    --nebula-edge-active,
+    var(--admin-color-primary, #246bfd)
+  );
   --diagram-port-bg: var(--admin-color-bg-surface, #ffffff);
   --diagram-port-border: var(--admin-color-text-muted, #86909c);
 
@@ -65,8 +86,12 @@
 
 .diagram-node[aria-selected="true"],
 .diagram-node[data-selected="true"] {
+  background: var(--nebula-selection-bg, var(--admin-color-bg-hover, #f7f8fa));
   border-color: var(--diagram-node-border-selected);
-  box-shadow: var(--admin-focus-ring, 0 0 0 3px rgb(36 107 253 / 20%));
+  box-shadow: var(
+    --nebula-selection-ring,
+    0 0 0 2px rgb(29 33 41 / 16%)
+  );
 }
 
 .diagram-node:focus-visible {
@@ -96,19 +121,23 @@
 }
 
 .diagram-node[data-status="running"] {
-  border-left: 3px solid var(--admin-color-primary, #246bfd);
+  border-left: 3px solid
+    var(--nebula-state-running, var(--admin-color-primary, #246bfd));
 }
 
 .diagram-node[data-status="success"] {
-  border-left: 3px solid var(--admin-color-success, #00a870);
+  border-left: 3px solid
+    var(--nebula-state-success, var(--admin-color-success, #00a870));
 }
 
 .diagram-node[data-status="warning"] {
-  border-left: 3px solid var(--admin-color-warning, #d97706);
+  border-left: 3px solid
+    var(--nebula-state-warning, var(--admin-color-warning, #d97706));
 }
 
 .diagram-node[data-status="error"] {
-  border-left: 3px solid var(--admin-color-danger, #e5484d);
+  border-left: 3px solid
+    var(--nebula-state-error, var(--admin-color-danger, #e5484d));
 }
 
 .diagram-node[data-status="disabled"] {
@@ -159,11 +188,11 @@
 }
 
 .diagram-edge[data-status="warning"] {
-  stroke: var(--admin-color-warning, #d97706);
+  stroke: var(--nebula-state-warning, var(--admin-color-warning, #d97706));
 }
 
 .diagram-edge[data-status="error"] {
-  stroke: var(--admin-color-danger, #e5484d);
+  stroke: var(--nebula-state-error, var(--admin-color-danger, #e5484d));
 }
 
 .diagram-edge-label {

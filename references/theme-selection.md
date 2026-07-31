@@ -1,6 +1,8 @@
 # 主题选择与切换
 
-本 Skill 提供七套视觉主题，可应用于产品应用与营销官网。主题只改变视觉语言、字体、密度和组件表面，不决定设计表面，也不改变业务模型、信息架构、权限、状态、转化目标或可访问性要求。
+本 Skill 的主题由 [assets/theme-registry.json](../assets/theme-registry.json) 注册，可应用于产品应用与营销官网。主题只改变视觉语言、字体、密度和组件表面，不决定设计表面，也不改变业务模型、信息架构、权限、状态、转化目标或可访问性要求。
+
+颜色策略是与主题平行的维度。先按 [color-strategy.md](color-strategy.md) 选择 `monochrome-first`、`brand-led` 或 `data-emphasis`，再选择主题。任何主题都不能改变状态色含义。
 
 ## 选择矩阵
 
@@ -17,7 +19,7 @@
 ## 决策规则
 
 1. 用户明确指定主题时直接使用，不混入其他主题的标志性表面。
-2. 用户要求提供选择时，给出七个同结构的小型预览或实现主题切换器。
+2. 用户要求提供选择时，从注册表读取主题，给出同结构的小型预览或实现主题切换器。
 3. 用户未指定时默认使用 Cal.com。
 4. 只有用户明确要求推荐、比较或选择最合适主题时，才按场景建议：高密度风控与数据后台使用 Clarity；内容、知识和协作工具使用 Notion；暗色工程工具使用 Linear；人文 AI 产品使用 Claude；终端与编码工具使用 OpenCode AI；关键运营、Ontology、态势感知和多面板任务控制台使用 Palantir。业务类型本身不能自动覆盖 Cal.com 默认值。
 5. 先按 [surface-selection.md](surface-selection.md) 判断产品应用或营销官网，再套用主题；主题不决定导航结构或页面类型。
@@ -28,7 +30,7 @@
 
 ## 实现契约
 
-新项目未指定主题时优先复制 Cal.com 令牌；用户指定或选择其他主题时复制对应令牌：
+注册表是默认主题、主题顺序和文件路径的唯一事实来源。当前主题包括：
 
 - Clarity：[assets/clarity-tokens.css](../assets/clarity-tokens.css)
 - Cal.com：[assets/cal-tokens.css](../assets/cal-tokens.css)
@@ -38,7 +40,7 @@
 - OpenCode AI：[assets/opencode-tokens.css](../assets/opencode-tokens.css)
 - Palantir：[assets/palantir-tokens.css](../assets/palantir-tokens.css)
 
-七套文件都暴露同一组 `--admin-*` 语义变量，包括分离的中英文字体令牌。组件只依赖语义变量，不依赖主题名称：
+所有主题文件都暴露同一组 `--admin-*` 语义变量，包括分离的中英文字体令牌。组件只依赖语义变量，不依赖主题名称：
 
 ```css
 .primary-button {
@@ -48,9 +50,17 @@
 }
 ```
 
+技术工作台、产品应用和图形页面在主题令牌后加载
+[assets/semantic-state-tokens.css](../assets/semantic-state-tokens.css)，获取跨主题稳定的状态、选择、AI 和数据系列角色：
+
+```html
+<link rel="stylesheet" href="./assets/cal-tokens.css">
+<link rel="stylesheet" href="./assets/semantic-state-tokens.css">
+```
+
 需要运行时切换时：
 
-1. 把七套令牌放在 `[data-admin-theme="..."]` 作用域，或把选中的令牌样式表启用。
+1. 把已注册主题令牌放在 `[data-admin-theme="..."]` 作用域，或把选中的令牌样式表启用。
 2. 把选择持久化到 `localStorage`；首次加载尊重产品默认值。
 3. 同步设置 `color-scheme`，避免 Linear、Palantir 等暗色主题出现错误的系统控件。
 4. 切换后检查图表、弹层、滚动条、空态和焦点环，不只检查按钮颜色。
@@ -65,7 +75,8 @@
 主题不能改变图的结构语义：
 
 - 节点分组、关系方向和状态必须保持稳定。
-- 不用主题色替代业务分组色。
+- 节点类型使用图标、短代码、形状或分组，默认不分配彩虹色。
+- 选中使用中性边框或焦点环，不覆盖运行、警告和错误状态。
 - 暗色主题需要重新检查边、网格、节点文字和选中态对比度。
 - 多主题预览使用相同数据和布局，便于比较视觉风格而不是比较内容。
 

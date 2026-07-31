@@ -12,7 +12,8 @@
 - 设计仪表盘、管理列表、详情页、表单、配置流程、多面板工作台等中后台页面。
 - 生成系统架构图、层级结构图、流程图、泳道图、数据血缘 DAG、拓扑图、时序图和对象关系图。
 - 支持搜索、筛选、节点聚焦、缩放适配、详情面板和列表降级等图形工作台交互。
-- 提供七套共享语义令牌的视觉主题，支持运行时主题切换。
+- 提供注册表驱动的共享语义主题，支持运行时主题切换。
+- 将颜色策略与品牌主题分离，支持 Monochrome First、品牌主导和数据强调。
 - 分离中文、英文、标题、正文和代码字体，避免不同主题都回退到同一套中文系统字体。
 - 在已有项目中优先复用现有组件、路由、设计令牌和系统外壳。
 
@@ -50,6 +51,18 @@ Skill 会先选择设计表面，再决定布局：
 | Palantir | 近黑任务画布、Blueprint 蓝、细边界 | Ontology、关键运营、态势感知和工业 AI 官网 |
 
 用户没有指定主题时始终使用 Cal.com。只有用户明确要求推荐、比较或选择最合适主题时，才会按业务场景推荐其他主题。
+
+## 颜色策略
+
+主题回答“页面是什么视觉语言”，颜色策略回答“颜色承担什么信息”。两者独立组合：
+
+| 策略 | 推荐场景 | 核心规则 |
+|---|---|---|
+| Monochrome First | Flow、DAG、关系图、架构图、AI IDE、高密度后台 | 类型保持中性，颜色留给状态、关键动作、AI 与数据 |
+| Brand Led | 营销官网、品牌发布页、低密度轻应用 | 品牌色推动叙事，但不覆盖业务状态 |
+| Data Emphasis | BI、监控、分析和多系列图表 | 系列色限制在可视化区域，不扩散到导航和分类 |
+
+产品应用和技术图默认在主题令牌后加载 `assets/semantic-state-tokens.css`，获得跨主题一致的选择、运行、成功、警告、错误、AI 和数据系列角色。
 
 ## 安装
 
@@ -216,7 +229,8 @@ http://localhost:8765/demo/marketing.html
 
 产品应用 Demo 支持：
 
-- 七套主题实时切换，首次打开默认为 Cal.com。
+- 已注册主题实时切换，首次打开默认为 Cal.com。
+- 使用 Monochrome First：对象类型由短代码和分组表达，颜色仅表示风险状态。
 - 搜索对象、按风险状态和时间范围筛选。
 - 点击节点聚焦直接关系。
 - 画布缩放、适配和状态统计。
@@ -225,8 +239,8 @@ http://localhost:8765/demo/marketing.html
 
 官网营销页 Demo 支持：
 
-- 基于七个官方公开网站研究的营销主题切换，默认使用 Cal.com。
-- 同一价值主张、内容结构和主 CTA 下比较七种官网视觉语言。
+- 基于官方公开网站研究的多主题切换，默认使用 Cal.com。
+- 同一价值主张、内容结构和主 CTA 下比较不同官网视觉语言。
 - 响应式顶部导航、产品流程交互、审计证明、FAQ 和本地表单反馈。
 - 不使用相关品牌 Logo、插画、客户名单或虚构商业数据。
 - 移动端布局、键盘焦点、语义 HTML 与 `prefers-reduced-motion`。
@@ -246,12 +260,14 @@ nebula-design-skill/
 │   ├── claude-tokens.css
 │   ├── opencode-tokens.css
 │   ├── palantir-tokens.css
-│   └── diagram-tokens.css               # 图形工作台语义令牌
+│   ├── diagram-tokens.css               # 图形工作台语义令牌
+│   ├── semantic-state-tokens.css        # 跨主题颜色角色
+│   └── theme-registry.json              # 主题注册与默认值
 ├── references/
 │   ├── application-shell-selection.md   # 单页面与系统应用判定
 │   ├── surface-selection.md             # 产品应用与营销官网判定
 │   ├── marketing-page-patterns.md       # 营销页面结构与转化规则
-│   ├── marketing-theme-adaptation.md    # 七主题营销场景适配
+│   ├── marketing-theme-adaptation.md    # 多主题营销场景适配
 │   ├── marketing-theme-cal.md           # Cal.com 官网风格
 │   ├── marketing-theme-clarity.md       # Clarity 官网风格
 │   ├── marketing-theme-notion.md        # Notion 官网风格
@@ -261,20 +277,24 @@ nebula-design-skill/
 │   ├── marketing-theme-palantir.md      # Palantir 官网风格
 │   ├── theme-palantir.md                # Palantir 产品应用风格
 │   ├── theme-selection.md               # 主题选择规则
+│   ├── color-strategy.md                # Monochrome First 等颜色策略
 │   ├── typography-system.md             # 中英文字体与回退
 │   ├── diagram-design.md                # 架构图与关系图规范
 │   ├── page-patterns.md                 # 页面模式
 │   └── ...                              # 组件、实现与场景参考
-└── demo/
-    ├── index.html                       # 七主题风控关系图 Demo
-    └── marketing.html                   # 七主题官网营销页 Demo
+├── demo/
+│   ├── index.html                       # 多主题风控关系图 Demo
+│   └── marketing.html                   # 多主题官网营销页 Demo
+└── scripts/
+    ├── validate-theme-contract.mjs      # 主题契约校验
+    └── validate-demo.mjs                # Demo 结构与脚本校验
 ```
 
 ## 自定义
 
 ### 修改默认主题
 
-默认主题在 `SKILL.md` 和 `references/theme-selection.md` 中声明。实际页面应通过 `--admin-*` 语义令牌引用颜色、字体、圆角和尺寸，不要在组件中绑定主题名称。
+默认主题和主题顺序在 `assets/theme-registry.json` 中声明。实际页面应通过 `--admin-*` 主题令牌与 `--nebula-*` 颜色角色引用颜色、字体、圆角和尺寸，不要在组件中绑定主题名称。
 
 ### 接入字体
 
@@ -292,8 +312,20 @@ nebula-design-skill/
 
 1. 在 `references/` 中增加主题规范。
 2. 在 `assets/` 中提供完整的 `--admin-*` 令牌。
-3. 更新 `references/theme-selection.md` 的选择矩阵和路由。
-4. 验证正文、状态色、焦点环、图形画布和暗色系统控件。
+3. 在 `assets/theme-registry.json` 注册主题，并更新选择矩阵和 Skill 路由。
+4. 更新需要内嵌主题 CSS 的 Demo。
+5. 运行自动校验并检查正文、状态色、焦点环、图形画布和暗色系统控件。
+
+## 验证
+
+修改主题、语义令牌或 Demo 后运行：
+
+```bash
+node scripts/validate-theme-contract.mjs
+node scripts/validate-demo.mjs
+```
+
+第一条命令检查注册表、引用文件、主题令牌契约和跨主题颜色角色；第二条检查两个单 HTML Demo 的主题顺序、脚本语法、ID、锚点、语义结构和本地依赖约束。
 
 ## 设计来源与说明
 

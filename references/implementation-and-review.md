@@ -77,6 +77,12 @@ type AsyncState<T> =
 5. 检查至少两个目标宽度下的溢出与遮挡。
 6. 检查浏览器控制台错误和重复请求。
 7. 对照以下评审量表，修复高影响问题。
+8. 修改主题、令牌或 Demo 时运行：
+
+```bash
+node scripts/validate-theme-contract.mjs
+node scripts/validate-demo.mjs
+```
 
 无法执行某项验证时明确说明原因，不要声称已验证。
 

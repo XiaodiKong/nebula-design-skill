@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Nebula Flow 七主题官网营销页 Demo，用于展示 Nebula Design Skill 的营销页面设计能力。"
+      content="Nebula Flow 多主题官网营销页 Demo，用于展示 Nebula Design Skill 的营销页面设计能力。"
     />
-    <title>Nebula Flow｜七主题官网营销页 Demo</title>
+    <title>Nebula Flow｜多主题官网营销页 Demo</title>
     <script>
       document.documentElement.classList.add("js");
     </script>
@@ -2106,7 +2106,7 @@
       <div class="demo-bar__title">
         <span class="demo-bar__dot" aria-hidden="true"></span>
         <strong>Nebula marketing demo</strong>
-        <span>同一内容 · 七套官网语言</span>
+        <span data-theme-count>同一内容 · 多套官网语言</span>
       </div>
       <div class="demo-bar__actions">
         <label for="theme-select">主题</label>
@@ -2383,7 +2383,7 @@
             <p class="eyebrow">Questions</p>
             <h2 id="faq-title">开始之前，你可能想知道</h2>
             <p class="faq-intro">
-              本页用于展示营销信息架构和七套视觉主题，不代表真实产品承诺。
+              本页用于展示营销信息架构和多套视觉主题，不代表真实产品承诺。
             </p>
           </div>
           <div class="faq-list">
@@ -2396,7 +2396,7 @@
             <details>
               <summary>切换主题会改变页面内容吗？</summary>
               <p>
-                不会。七套主题使用相同价值主张、区块、产品证明和 CTA，只改变视觉语言、版式节奏与交互表面，方便进行公平比较。
+                不会。所有主题使用相同价值主张、区块、产品证明和 CTA，只改变视觉语言、版式节奏与交互表面，方便进行公平比较。
               </p>
             </details>
             <details>
@@ -2495,6 +2495,7 @@
     <script>
       (() => {
         const themeSelect = document.querySelector("#theme-select");
+        const themeCount = document.querySelector("[data-theme-count]");
         const root = document.documentElement;
         const allowedThemes = new Set([
           "cal",
@@ -2507,6 +2508,7 @@
         ]);
         const storedTheme = localStorage.getItem("nebula-marketing-theme");
         const initialTheme = allowedThemes.has(storedTheme) ? storedTheme : "cal";
+        themeCount.textContent = `同一内容 · ${themeSelect.options.length} 套官网语言`;
 
         const setTheme = (theme) => {
           const nextTheme = allowedThemes.has(theme) ? theme : "cal";

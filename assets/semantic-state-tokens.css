@@ -1,0 +1,84 @@
+:root {
+  /*
+   * Load this file after one registered theme token file.
+   * It aliases the shared --admin-* contract and does not apply global styles.
+   */
+  --nebula-ui-page: var(--admin-color-bg-page);
+  --nebula-ui-surface: var(--admin-color-bg-surface);
+  --nebula-ui-surface-elevated: var(--admin-color-bg-elevated);
+  --nebula-ui-surface-hover: var(--admin-color-bg-hover);
+  --nebula-ui-border: var(--admin-color-border);
+  --nebula-ui-border-strong: var(--admin-color-border-strong);
+  --nebula-ui-text: var(--admin-color-text);
+  --nebula-ui-text-secondary: var(--admin-color-text-secondary);
+  --nebula-ui-text-muted: var(--admin-color-text-muted);
+
+  --nebula-action-primary: var(--admin-color-primary);
+  --nebula-action-primary-hover: var(--admin-color-primary-hover);
+  --nebula-action-on-primary: var(--admin-color-on-primary);
+
+  /* Selection remains neutral so it never masks execution state. */
+  --nebula-selection-border: var(--admin-color-text);
+  --nebula-selection-bg: color-mix(
+    in srgb,
+    var(--admin-color-text) 8%,
+    transparent
+  );
+  --nebula-selection-ring: 0 0 0 2px
+    color-mix(in srgb, var(--admin-color-text) 16%, transparent);
+  --nebula-focus-ring: var(--admin-focus-ring);
+  --nebula-search-match: color-mix(
+    in srgb,
+    var(--admin-color-primary) 12%,
+    transparent
+  );
+
+  --nebula-state-running: var(--admin-color-primary);
+  --nebula-state-running-subtle: var(--admin-color-primary-subtle);
+  --nebula-state-success: var(--admin-color-success);
+  --nebula-state-success-subtle: var(--admin-color-success-subtle);
+  --nebula-state-warning: var(--admin-color-warning);
+  --nebula-state-warning-subtle: var(--admin-color-warning-subtle);
+  --nebula-state-error: var(--admin-color-danger);
+  --nebula-state-error-subtle: var(--admin-color-danger-subtle);
+  --nebula-state-paused: var(--admin-color-text-muted);
+  --nebula-state-disabled: var(--admin-color-text-disabled);
+
+  --nebula-ai: var(--admin-color-ai);
+  --nebula-ai-subtle: var(--admin-color-ai-subtle);
+
+  --nebula-node-fill: var(--admin-color-bg-surface);
+  --nebula-node-border: var(--admin-color-border);
+  --nebula-node-border-selected: var(--nebula-selection-border);
+  --nebula-node-group-bg: var(--admin-diagram-group-bg);
+  --nebula-edge: var(--admin-diagram-edge);
+  --nebula-edge-active: var(--admin-color-primary);
+
+  /*
+   * Ordinary chart series avoid success/warning/error roles.
+   * color-mix() targets modern browsers; older targets should define explicit
+   * project-level fallbacks before consuming these derived series.
+   */
+  --nebula-data-series-1: var(--admin-color-primary);
+  --nebula-data-series-2: var(--admin-color-ai);
+  --nebula-data-series-3: color-mix(
+    in srgb,
+    var(--admin-color-primary) 68%,
+    var(--admin-color-text)
+  );
+  --nebula-data-series-4: color-mix(
+    in srgb,
+    var(--admin-color-ai) 68%,
+    var(--admin-color-text)
+  );
+  --nebula-data-series-5: color-mix(
+    in srgb,
+    var(--admin-color-primary) 48%,
+    var(--admin-color-bg-surface)
+  );
+  --nebula-data-series-6: color-mix(
+    in srgb,
+    var(--admin-color-ai) 48%,
+    var(--admin-color-bg-surface)
+  );
+}
