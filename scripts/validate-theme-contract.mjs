@@ -136,7 +136,8 @@ const skill = await readProjectFile("SKILL.md", "skill routing");
 for (const requiredPath of [
   "assets/theme-registry.json",
   "assets/semantic-state-tokens.css",
-  "references/color-strategy.md"
+  "references/color-strategy.md",
+  "references/theme-quality-gates.md"
 ]) {
   if (!skill.includes(requiredPath)) errors.push(`SKILL.md: does not route to ${requiredPath}`);
 }

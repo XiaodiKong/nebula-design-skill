@@ -244,6 +244,7 @@ http://localhost:8765/demo/marketing.html
 - 响应式顶部导航、产品流程交互、审计证明、FAQ 和本地表单反馈。
 - 不使用相关品牌 Logo、插画、客户名单或虚构商业数据。
 - 移动端布局、键盘焦点、语义 HTML 与 `prefers-reduced-motion`。
+- 主题质量门槛覆盖文字层重叠、参考线对齐、装饰密度、中文断行与多断点回退。
 
 ## 项目结构
 
@@ -278,6 +279,7 @@ nebula-design-skill/
 │   ├── theme-palantir.md                # Palantir 产品应用风格
 │   ├── theme-selection.md               # 主题选择规则
 │   ├── color-strategy.md                # Monochrome First 等颜色策略
+│   ├── theme-quality-gates.md           # 主题转译与布局质量门槛
 │   ├── typography-system.md             # 中英文字体与回退
 │   ├── diagram-design.md                # 架构图与关系图规范
 │   ├── page-patterns.md                 # 页面模式
@@ -314,7 +316,8 @@ nebula-design-skill/
 2. 在 `assets/` 中提供完整的 `--admin-*` 令牌。
 3. 在 `assets/theme-registry.json` 注册主题，并更新选择矩阵和 Skill 路由。
 4. 更新需要内嵌主题 CSS 的 Demo。
-5. 运行自动校验并检查正文、状态色、焦点环、图形画布和暗色系统控件。
+5. 按 `references/theme-quality-gates.md` 在多个断点检查重叠、参考线、断行和装饰密度。
+6. 运行自动校验并检查正文、状态色、焦点环、图形画布和暗色系统控件。
 
 ## 验证
 

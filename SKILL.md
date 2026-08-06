@@ -39,6 +39,7 @@ description: Design, implement, review, and optimize frontend product experience
 
 - 任何新页面或页面重构：先读取 [references/surface-selection.md](references/surface-selection.md)。
 - 任何视觉任务：读取 [references/color-strategy.md](references/color-strategy.md) 和 [references/theme-selection.md](references/theme-selection.md)，先选颜色策略，再选主题。
+- 新增主题、主题专属布局、多主题切换器或主题转译评审：必须读取 [references/theme-quality-gates.md](references/theme-quality-gates.md)。
 - 需要查询默认主题、已注册主题或主题文件路径：读取 [assets/theme-registry.json](assets/theme-registry.json)，不要在新逻辑中硬编码主题数量。
 - 产品应用：读取 [references/visual-system.md](references/visual-system.md) 和 [references/application-shell-selection.md](references/application-shell-selection.md)。
 - 产品应用选择 Cal.com：读取 [references/theme-cal.md](references/theme-cal.md)。
@@ -138,6 +139,7 @@ description: Design, implement, review, and optimize frontend product experience
 - 使用语义色和中性色建立层级；颜色不作无意义装饰。
 - 对象类型优先用文字、图标、形状或分组表达；颜色主要留给状态、关键动作、AI 与数据。
 - 采用一致间距网格、克制圆角和有目的的边框或阴影。
+- 主题装饰与布局遵守 [references/theme-quality-gates.md](references/theme-quality-gates.md)：可读内容层不得互相覆盖，参考线必须与真实容器对齐，品牌装饰不能与业务模块竞争。
 - 产品应用默认桌面端、中等偏紧凑密度、中文优先；营销官网必须适配移动端并允许更强的展示层级。
 - 只在业务模块确实独立时使用卡片，避免“卡片套卡片”。
 - 关键操作必须有清楚的中文文字，不能只靠模糊图标。
@@ -168,6 +170,7 @@ description: Design, implement, review, and optimize frontend product experience
 - 需要跨主题状态角色时，在主题令牌后加载 `assets/semantic-state-tokens.css`，组件使用 `--nebula-*`。
 - 在适当尺寸下检查主流程；复杂表格优先保证桌面端，并为窄屏提供查看与轻操作降级。
 - 营销页面检查移动端导航、内容顺序、首屏加载、语义标题、可索引正文、CTA 和 `prefers-reduced-motion`。
+- 主题专属布局至少检查 1440、1280、1024、768 和 390px；多主题页面不能只检查默认主题。
 - 图形页面检查节点重叠、连线穿越、文字截断、缩放边界、键盘操作和大数据量降级。
 - 验证关键操作、状态切换、空态、错误态和布局溢出。
 - 修改主题、令牌或 Demo 后运行 `node scripts/validate-theme-contract.mjs` 与 `node scripts/validate-demo.mjs`。
