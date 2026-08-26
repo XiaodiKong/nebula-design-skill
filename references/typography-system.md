@@ -65,6 +65,7 @@ pre,
 |---|---|---|
 | Clarity | Inter | Noto Sans SC / 思源黑体 |
 | Cal.com | Manrope / Inter | HarmonyOS Sans SC / Noto Sans SC |
+| AuraSearch | Helvetica Neue / Inter | PingFang SC / HarmonyOS Sans SC / Noto Sans SC |
 | Notion | Inter | Noto Sans SC / 思源黑体 |
 | Linear | Inter / Geist | Noto Sans SC / 思源黑体 |
 | Claude | Cormorant Garamond / EB Garamond；正文 Inter | Noto Serif SC / 思源宋体；正文 Noto Sans SC |

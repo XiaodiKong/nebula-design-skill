@@ -8,6 +8,7 @@
 ## 按选择读取
 
 - Cal.com（默认）：读取 [marketing-theme-cal.md](marketing-theme-cal.md)。
+- AuraSearch：读取 [marketing-theme-aurasearch.md](marketing-theme-aurasearch.md)。
 - Clarity：读取 [marketing-theme-clarity.md](marketing-theme-clarity.md)。
 - Notion：读取 [marketing-theme-notion.md](marketing-theme-notion.md)。
 - Linear：读取 [marketing-theme-linear.md](marketing-theme-linear.md)。
@@ -15,13 +16,14 @@
 - OpenCode AI：读取 [marketing-theme-opencode.md](marketing-theme-opencode.md)。
 - Palantir：读取 [marketing-theme-palantir.md](marketing-theme-palantir.md)。
 
-只读取当前选择的主题文件。用户要求比较或制作切换器时才读取全部七份。
+只读取当前选择的主题文件。用户要求比较或制作切换器时才读取全部八份。
 
 ## 快速矩阵
 
 | 主题 | 营销页核心表达 | 主要产品证明 |
 |---|---|---|
 | Cal.com（默认） | 浅灰框架、白色大容器、直接注册 | 清晰产品 UI 与完整操作步骤 |
+| AuraSearch | 浅紫白画布、紫色 CTA、大圆角 SaaS 表面 | 指标、趋势、主从详情与分析工作台 |
 | Clarity | 深蓝页头、企业蓝 CTA、橙蓝技术插画 | 架构、可访问性、安全与治理 |
 | Notion | 超大粗体、蓝色高亮、手绘亲和力 | 文档、协作内容与工作区 |
 | Linear | 近黑沉浸、低噪声导航、克制动效 | 融入背景的暗色产品画面 |

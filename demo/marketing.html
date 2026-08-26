@@ -56,6 +56,43 @@
         --button-transform: none;
       }
 
+      html[data-theme="aurasearch"] {
+        color-scheme: light;
+        --page: #f8f7fe;
+        --surface: #ffffff;
+        --surface-soft: #f4edff;
+        --surface-strong: #050d1f;
+        --text: #050d1f;
+        --text-soft: #545454;
+        --text-faint: #656468;
+        --line: #dfdfdf;
+        --line-strong: #a3a3a3;
+        --accent: #9348fc;
+        --accent-hover: #a96dfd;
+        --on-accent: #ffffff;
+        --focus: #9348fc;
+        --success: #01b0a1;
+        --success-soft: #e6f9f7;
+        --warning: #af882e;
+        --nav-bg: rgba(248, 247, 254, 0.9);
+        --nav-text: #050d1f;
+        --body-font:
+          "Helvetica Neue", Inter, "SF Pro Text", "PingFang SC",
+          "HarmonyOS Sans SC", MiSans, "Noto Sans SC", "Microsoft YaHei",
+          sans-serif;
+        --display-font:
+          "Helvetica Neue", Inter, "SF Pro Display", "PingFang SC",
+          "HarmonyOS Sans SC", "Noto Sans SC", sans-serif;
+        --radius-xs: 8px;
+        --radius-control: 12px;
+        --radius-card: 24px;
+        --radius-stage: 24px;
+        --radius-pill: 999px;
+        --hero-title: clamp(54px, 6.2vw, 84px);
+        --shadow: 0 16px 50px rgb(5 13 31 / 9%);
+        --stage-shadow: 0 28px 80px rgb(147 72 252 / 14%);
+      }
+
       html[data-theme="clarity"] {
         color-scheme: light;
         --page: #edf2f5;
@@ -1460,6 +1497,44 @@
         --page-width: 1180px;
       }
 
+      /* AuraSearch: light-violet SaaS shell with product-first analytics proof. */
+      html[data-theme="aurasearch"] .brand-mark {
+        border-color: #dec6fe;
+        border-radius: 12px;
+        background: linear-gradient(145deg, #b784fd, #9348fc 58%, #6833b3);
+      }
+
+      html[data-theme="aurasearch"] .hero {
+        grid-template-columns: minmax(0, 0.92fr) minmax(520px, 1.08fr);
+        gap: clamp(40px, 5vw, 72px);
+        padding-top: clamp(72px, 8vw, 110px);
+      }
+
+      html[data-theme="aurasearch"] .accent-word {
+        color: #9348fc;
+      }
+
+      html[data-theme="aurasearch"] .product-stage {
+        min-height: 540px;
+        border-color: #dec6fe;
+        background-color: #ffffff;
+        background-image: radial-gradient(circle, rgb(147 72 252 / 14%) 1px, transparent 1px);
+        background-size: 14px 14px;
+      }
+
+      html[data-theme="aurasearch"] .product-stage::before {
+        pointer-events: none;
+      }
+
+      html[data-theme="aurasearch"] .button:not(.button--secondary) {
+        background: linear-gradient(135deg, #a96dfd, #9348fc 60%, #8642e5);
+      }
+
+      html[data-theme="aurasearch"] .flow-step[aria-pressed="true"] {
+        border-color: #9348fc;
+        box-shadow: 0 0 0 3px rgb(147 72 252 / 12%);
+      }
+
       /* Clarity: enterprise header, technical blue/orange geometry. */
       html[data-theme="clarity"] .brand-mark {
         border-color: #f07c34;
@@ -2145,6 +2220,7 @@
         <label for="theme-select">主题</label>
         <select id="theme-select">
           <option value="cal">Cal.com（默认）</option>
+          <option value="aurasearch">AuraSearch</option>
           <option value="clarity">Clarity</option>
           <option value="notion">Notion</option>
           <option value="linear">Linear</option>
@@ -2532,6 +2608,7 @@
         const root = document.documentElement;
         const allowedThemes = new Set([
           "cal",
+          "aurasearch",
           "clarity",
           "notion",
           "linear",

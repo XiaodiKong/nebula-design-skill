@@ -2,7 +2,7 @@
 
 面向 Codex 的通用前端设计 Skill。它可以把需求转化为产品应用、企业中后台、营销官网、信息架构、交互规则、视觉主题，以及可运行的 HTML 页面或技术关系图。
 
-项目默认使用 **Cal.com** 风格，并提供 Clarity、Notion、Linear、Claude、OpenCode AI、Palantir 等可选主题。
+项目默认使用 **Cal.com** 风格，并提供 AuraSearch、Clarity、Notion、Linear、Claude、OpenCode AI、Palantir 等可选主题。
 
 ## 主要能力
 
@@ -43,6 +43,7 @@ Skill 会先选择设计表面，再决定布局：
 | 主题 | 视觉特征 | 推荐方向 |
 |---|---|---|
 | **Cal.com（默认）** | 黑白中性、清爽留白、友好 SaaS | 通用产品应用、SaaS 官网、表单与定价 |
+| AuraSearch | 浅紫画布、大圆角、紫色主操作、分析图表 | AI 分析、LLM 可观测性、SaaS BI 与增长运营 |
 | Clarity | 深蓝、企业蓝、紧凑清晰 | 风控与数据后台、企业服务和安全官网 |
 | Notion | 暖灰、内容优先、柔和色块 | 知识协作产品、内容型官网与模板展示 |
 | Linear | 近黑画布、薰衣草蓝、低噪声 | 工程工具、开发者官网与产品发布 |
@@ -165,6 +166,12 @@ $nebula-design-skill
 
 ```text
 $nebula-design-skill
+使用 AuraSearch 风格设计一个 AI 模型可观测性系统，
+需要 264px 圆角侧栏、指标卡、趋势图、模型排名和主从详情，并支持浅色与暗色模式。
+```
+
+```text
+$nebula-design-skill
 使用 Claude 风格设计一个中文 AI 知识分析工作台，
 标题使用中文衬线字体，正文保持无衬线。
 ```
@@ -229,7 +236,7 @@ http://localhost:8765/demo/marketing.html
 
 产品应用 Demo 支持：
 
-- 已注册主题实时切换，首次打开默认为 Cal.com。
+- 8 套已注册主题实时切换，首次打开默认为 Cal.com。
 - 使用 Monochrome First：对象类型由短代码和分组表达，颜色仅表示风险状态。
 - 搜索对象、按风险状态和时间范围筛选。
 - 点击节点聚焦直接关系。
@@ -239,7 +246,7 @@ http://localhost:8765/demo/marketing.html
 
 官网营销页 Demo 支持：
 
-- 基于官方公开网站研究的多主题切换，默认使用 Cal.com。
+- 基于公开页面研究与用户提供设计稿沉淀的 8 套主题切换，默认使用 Cal.com。
 - 同一价值主张、内容结构和主 CTA 下比较不同官网视觉语言。
 - 响应式顶部导航、产品流程交互、审计证明、FAQ 和本地表单反馈。
 - 不使用相关品牌 Logo、插画、客户名单或虚构商业数据。
@@ -255,6 +262,7 @@ nebula-design-skill/
 │   └── openai.yaml                      # Skill 的界面元数据
 ├── assets/
 │   ├── cal-tokens.css                   # Cal.com 默认主题
+│   ├── aurasearch-tokens.css            # AuraSearch AI 分析 SaaS 主题
 │   ├── clarity-tokens.css
 │   ├── notion-tokens.css
 │   ├── linear-tokens.css
@@ -270,12 +278,14 @@ nebula-design-skill/
 │   ├── marketing-page-patterns.md       # 营销页面结构与转化规则
 │   ├── marketing-theme-adaptation.md    # 多主题营销场景适配
 │   ├── marketing-theme-cal.md           # Cal.com 官网风格
+│   ├── marketing-theme-aurasearch.md    # AuraSearch 官网转译
 │   ├── marketing-theme-clarity.md       # Clarity 官网风格
 │   ├── marketing-theme-notion.md        # Notion 官网风格
 │   ├── marketing-theme-linear.md        # Linear 官网风格
 │   ├── marketing-theme-claude.md        # Claude 官网风格
 │   ├── marketing-theme-opencode.md      # OpenCode AI 官网风格
 │   ├── marketing-theme-palantir.md      # Palantir 官网风格
+│   ├── theme-aurasearch.md              # AuraSearch 产品应用风格
 │   ├── theme-palantir.md                # Palantir 产品应用风格
 │   ├── theme-selection.md               # 主题选择规则
 │   ├── color-strategy.md                # Monochrome First 等颜色策略
@@ -332,7 +342,7 @@ node scripts/validate-demo.mjs
 
 ## 设计来源与说明
 
-Cal.com、Notion、Linear、Claude 和 OpenCode AI 产品应用主题参考了 [VoltAgent/awesome-design-md](https://github.com/VoltAgent/awesome-design-md) 中的公开设计分析；Palantir 产品应用主题参考官方 [Blueprint](https://github.com/palantir/blueprint) 和 [Workshop 设计实践](https://www.palantir.com/docs/foundry/workshop/application-design-best-practices)。营销主题进一步研究了 [Cal.com](https://cal.com/)、[Notion](https://www.notion.com/)、[Linear](https://linear.app/)、[Claude by Anthropic](https://www.anthropic.com/claude)、[OpenCode](https://opencode.ai/)、[Clarity Design System](https://clarity.design/) 和 [Palantir](https://www.palantir.com/) 的官方公开网站。
+Cal.com、Notion、Linear、Claude 和 OpenCode AI 产品应用主题参考了 [VoltAgent/awesome-design-md](https://github.com/VoltAgent/awesome-design-md) 中的公开设计分析；Palantir 产品应用主题参考官方 [Blueprint](https://github.com/palantir/blueprint) 和 [Workshop 设计实践](https://www.palantir.com/docs/foundry/workshop/application-design-best-practices)。AuraSearch 主题来自用户提供的本地 Figma UI Kit，项目只沉淀视觉令牌、布局、组件与响应式规则，不分发原始设计稿或品牌素材。营销主题进一步研究了 [Cal.com](https://cal.com/)、[Notion](https://www.notion.com/)、[Linear](https://linear.app/)、[Claude by Anthropic](https://www.anthropic.com/claude)、[OpenCode](https://opencode.ai/)、[Clarity Design System](https://clarity.design/) 和 [Palantir](https://www.palantir.com/) 的官方公开网站。
 
 本项目提供的是面向产品应用与营销官网的非官方前端适配，不是相关品牌的官方设计系统、商标授权或像素级复刻。
 

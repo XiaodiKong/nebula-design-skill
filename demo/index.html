@@ -107,6 +107,57 @@
       --graph-grid: rgb(107 114 128 / 18%);
     }
 
+    html[data-theme="aurasearch"] {
+      color-scheme: light;
+      --font-latin-body: "Helvetica Neue", Inter, "SF Pro Text", "Segoe UI";
+      --font-cjk-body: "PingFang SC", "HarmonyOS Sans SC", MiSans, "Noto Sans SC", "Microsoft YaHei";
+      --font-latin-display: "Helvetica Neue", Inter, "SF Pro Display", "Segoe UI";
+      --font-cjk-display: var(--font-cjk-body);
+      --font-mono: "JetBrains Mono", "SFMono-Regular", Menlo, Consolas, "Noto Sans Mono CJK SC", monospace;
+      --font-body: var(--font-latin-body), var(--font-cjk-body), system-ui, sans-serif;
+      --font-display: var(--font-latin-display), var(--font-cjk-display), system-ui, sans-serif;
+      --primary: #9348fc;
+      --primary-hover: #a96dfd;
+      --primary-active: #6833b3;
+      --primary-subtle: #f4edff;
+      --text: #050d1f;
+      --text-secondary: #545454;
+      --text-muted: #a3a3a3;
+      --text-disabled: #dfdfdf;
+      --page-bg: #f8f7fe;
+      --surface: #ffffff;
+      --surface-hover: #f9f8f7;
+      --surface-elevated: #ffffff;
+      --border: #dfdfdf;
+      --border-strong: #a3a3a3;
+      --success: #01b0a1;
+      --success-subtle: #e6f9f7;
+      --warning: #af882e;
+      --warning-subtle: #fffaed;
+      --danger: #ff5a00;
+      --danger-subtle: #ffefe6;
+      --purple: #d500bb;
+      --purple-subtle: #fbe6f8;
+      --sidebar-width: 264px;
+      --sidebar-collapsed: 72px;
+      --topbar-height: 48px;
+      --sidebar-bg: #ffffff;
+      --sidebar-text: #545454;
+      --sidebar-muted: #a3a3a3;
+      --sidebar-hover: #f9f8f7;
+      --sidebar-hover-text: #050d1f;
+      --sidebar-active: #f4edff;
+      --sidebar-active-text: #3e1e6a;
+      --sidebar-border: #f0efee;
+      --avatar-bg: #9348fc;
+      --radius-control: 12px;
+      --radius-surface: 24px;
+      --shadow-floating: 0 16px 40px rgb(5 13 31 / 10%);
+      --focus-ring: 0 0 0 3px rgb(147 72 252 / 24%);
+      --graph-bg: #ffffff;
+      --graph-grid: rgb(147 72 252 / 13%);
+    }
+
     html[data-theme="notion"] {
       color-scheme: light;
       --font-latin-body: "Notion Sans", Inter, "Helvetica Neue", Arial;
@@ -1378,6 +1429,59 @@
       padding: 0;
     }
 
+    @media (min-width: 761px) {
+      html[data-theme="aurasearch"] .sidebar {
+        inset: 16px auto 16px 16px;
+        overflow: hidden;
+        border: 1px solid var(--sidebar-border);
+        border-radius: 24px;
+      }
+
+      html[data-theme="aurasearch"] .shell {
+        min-height: calc(100vh - 32px);
+        margin-right: 16px;
+        margin-left: calc(var(--sidebar-width) + 40px);
+        padding-top: 16px;
+      }
+
+      html[data-theme="aurasearch"] body.sidebar-collapsed .shell {
+        margin-left: calc(var(--sidebar-collapsed) + 40px);
+      }
+    }
+
+    html[data-theme="aurasearch"] .topbar {
+      padding-inline: 0;
+      background: transparent;
+      border-bottom: 0;
+    }
+
+    html[data-theme="aurasearch"] .main {
+      padding: 32px 0 16px;
+    }
+
+    html[data-theme="aurasearch"] .brand-mark,
+    html[data-theme="aurasearch"] .avatar {
+      border-radius: 12px;
+      background: linear-gradient(145deg, #b784fd, #9348fc 58%, #6833b3);
+    }
+
+    html[data-theme="aurasearch"] .nav-item,
+    html[data-theme="aurasearch"] .environment-badge,
+    html[data-theme="aurasearch"] .theme-picker {
+      border-radius: 999px;
+    }
+
+    html[data-theme="aurasearch"] .filter-bar,
+    html[data-theme="aurasearch"] .workbench,
+    html[data-theme="aurasearch"] .toast {
+      border-radius: 24px;
+    }
+
+    html[data-theme="aurasearch"] .page-title {
+      font-size: 24px;
+      letter-spacing: -0.025em;
+    }
+
     html[data-theme="palantir"] body {
       background-image:
         linear-gradient(rgb(143 153 168 / 5%) 1px, transparent 1px),
@@ -1665,6 +1769,7 @@
             <span class="theme-picker-label">界面风格</span>
             <select class="theme-select" id="themeSwitcher" aria-label="界面风格">
               <option value="cal">Cal.com</option>
+              <option value="aurasearch">AuraSearch</option>
               <option value="clarity">Clarity</option>
               <option value="notion">Notion</option>
               <option value="linear">Linear</option>
@@ -1834,8 +1939,9 @@
     (() => {
       const themeStorageKey = "risk-os-theme";
       const themeNames = {
-        clarity: "Clarity",
         cal: "Cal.com",
+        aurasearch: "AuraSearch",
+        clarity: "Clarity",
         notion: "Notion",
         linear: "Linear",
         claude: "Claude",

@@ -1,6 +1,6 @@
 ---
 name: nebula-design-skill
-description: Design, implement, review, and optimize frontend product experiences, enterprise applications, marketing websites, and HTML technical diagrams. Determine product app vs marketing site; for product apps choose focused page vs full system shell. Use for landing, feature, pricing, and launch pages; dashboards, CRM, risk/data/permission systems, workflows, tables, forms, AI workbenches; architecture, hierarchy, flow, lineage, topology, sequence, and relationship diagrams; information architecture, UI copy, components, theme tokens, typography, color semantics, and production frontend code. Use Cal.com by default and support registered Clarity, Notion, Linear, Claude, OpenCode AI, and Palantir themes with separate Chinese/Latin font stacks.
+description: Design, implement, review, and optimize frontend product experiences, enterprise applications, marketing websites, and HTML technical diagrams. Determine product app vs marketing site; for product apps choose focused page vs full system shell. Use for landing, feature, pricing, and launch pages; dashboards, CRM, risk/data/permission systems, workflows, tables, forms, AI workbenches; architecture, hierarchy, flow, lineage, topology, sequence, and relationship diagrams; information architecture, UI copy, components, theme tokens, typography, color semantics, and production frontend code. Use Cal.com by default; select other visual systems from the theme registry with separate Chinese and Latin font stacks.
 ---
 
 # Nebula Design
@@ -43,13 +43,14 @@ description: Design, implement, review, and optimize frontend product experience
 - 需要查询默认主题、已注册主题或主题文件路径：读取 [assets/theme-registry.json](assets/theme-registry.json)，不要在新逻辑中硬编码主题数量。
 - 产品应用：读取 [references/visual-system.md](references/visual-system.md) 和 [references/application-shell-selection.md](references/application-shell-selection.md)。
 - 产品应用选择 Cal.com：读取 [references/theme-cal.md](references/theme-cal.md)。
+- 产品应用选择 AuraSearch：读取 [references/theme-aurasearch.md](references/theme-aurasearch.md)。
 - 产品应用选择 Notion：读取 [references/theme-notion.md](references/theme-notion.md)。
 - 产品应用选择 Linear：读取 [references/theme-linear.md](references/theme-linear.md)。
 - 产品应用选择 Claude：读取 [references/theme-claude.md](references/theme-claude.md)。
 - 产品应用选择 OpenCode AI：读取 [references/theme-opencode.md](references/theme-opencode.md)。
 - 产品应用选择 Palantir：读取 [references/theme-palantir.md](references/theme-palantir.md)。
 - 产品应用选择 Clarity：使用 [references/visual-system.md](references/visual-system.md) 中的 Clarity 规则。
-- 营销官网：必须读取 [references/marketing-page-patterns.md](references/marketing-page-patterns.md) 和 [references/marketing-theme-adaptation.md](references/marketing-theme-adaptation.md)，再按选择读取 [Cal.com](references/marketing-theme-cal.md)、[Clarity](references/marketing-theme-clarity.md)、[Notion](references/marketing-theme-notion.md)、[Linear](references/marketing-theme-linear.md)、[Claude](references/marketing-theme-claude.md)、[OpenCode AI](references/marketing-theme-opencode.md) 或 [Palantir](references/marketing-theme-palantir.md) 营销规范；用户要求全主题比较或切换器时读取全部已注册主题。
+- 营销官网：必须读取 [references/marketing-page-patterns.md](references/marketing-page-patterns.md) 和 [references/marketing-theme-adaptation.md](references/marketing-theme-adaptation.md)，再按选择读取 [Cal.com](references/marketing-theme-cal.md)、[AuraSearch](references/marketing-theme-aurasearch.md)、[Clarity](references/marketing-theme-clarity.md)、[Notion](references/marketing-theme-notion.md)、[Linear](references/marketing-theme-linear.md)、[Claude](references/marketing-theme-claude.md)、[OpenCode AI](references/marketing-theme-opencode.md) 或 [Palantir](references/marketing-theme-palantir.md) 营销规范；用户要求全主题比较或切换器时读取全部已注册主题。
 - 任何字体选择、品牌字体接入或多语言排版：读取 [references/typography-system.md](references/typography-system.md)。
 - 用户未指定主题：默认使用 Cal.com；产品应用再读取 [references/theme-cal.md](references/theme-cal.md)。
 - 产品应用的新页面、页面重构或信息架构：再读取 [references/page-patterns.md](references/page-patterns.md)。
@@ -130,9 +131,9 @@ description: Design, implement, review, and optimize frontend product experience
 用户未指定时：
 
 - 默认使用 Cal.com，不因表面或业务类型自动改成其他主题。
-- 只有用户明确要求推荐、比较或“选择最合适主题”时，才按场景建议：高密度风控与数据后台可选 Clarity；内容、知识和协作工作区可选 Notion；暗色工程、研发与运维工具可选 Linear；AI 助手、研究与内容分析可选 Claude；AI 编码、终端与日志工具可选 OpenCode AI；关键运营、Ontology、态势感知与多面板任务控制台可选 Palantir。
+- 只有用户明确要求推荐、比较或“选择最合适主题”时，才按场景建议：AI 分析、LLM 可观测性和 SaaS BI 可选 AuraSearch；高密度风控与数据后台可选 Clarity；内容、知识和协作工作区可选 Notion；暗色工程、研发与运维工具可选 Linear；AI 助手、研究与内容分析可选 Claude；AI 编码、终端与日志工具可选 OpenCode AI；关键运营、Ontology、态势感知与多面板任务控制台可选 Palantir。
 
-按 [references/typography-system.md](references/typography-system.md) 分离中文、英文、标题、正文和等宽字体。自定义字体只有在项目已有合法资产时使用。这些参考品牌主题是基于公开页面分析的非官方适配，不能声称使用官方设计系统。
+按 [references/typography-system.md](references/typography-system.md) 分离中文、英文、标题、正文和等宽字体。自定义字体只有在项目已有合法资产时使用。这些参考品牌主题来自公开页面分析或用户提供的设计稿，都是本 Skill 的非官方适配；不能声称使用相关品牌的官方设计系统。
 
 遵守以下底线：
 

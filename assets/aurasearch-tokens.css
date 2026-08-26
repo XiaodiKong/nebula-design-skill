@@ -1,0 +1,174 @@
+:root {
+  color-scheme: light;
+
+  /*
+   * Derived from the user-provided AuraSearch Figma UI kit.
+   * The Skill stores reusable tokens and patterns, not the original artwork.
+   */
+  --admin-theme-name: "aurasearch";
+  --admin-font-latin-body: "Helvetica Neue", Inter, "SF Pro Text", "Segoe UI";
+  --admin-font-cjk-body: "PingFang SC", "HarmonyOS Sans SC", MiSans,
+    "Noto Sans SC", "Source Han Sans SC", "Microsoft YaHei";
+  --admin-font-latin-display: "Helvetica Neue", Inter, "SF Pro Display", "Segoe UI";
+  --admin-font-cjk-display: var(--admin-font-cjk-body);
+  --admin-font-mono: "JetBrains Mono", "SFMono-Regular", Menlo, Consolas,
+    "Sarasa Mono SC", "Noto Sans Mono CJK SC", monospace;
+  --admin-font-body:
+    var(--admin-font-latin-body),
+    var(--admin-font-cjk-body),
+    sans-serif;
+  --admin-font-display:
+    var(--admin-font-latin-display),
+    var(--admin-font-cjk-display),
+    sans-serif;
+  --admin-font-sans: var(--admin-font-body);
+
+  --admin-color-primary: #9348fc;
+  --admin-color-primary-hover: #a96dfd;
+  --admin-color-primary-active: #6833b3;
+  --admin-color-primary-subtle: #f4edff;
+  --admin-color-on-primary: #ffffff;
+  --admin-color-ai: #d500bb;
+  --admin-color-ai-subtle: #fbe6f8;
+
+  --admin-color-text: #050d1f;
+  --admin-color-text-secondary: #545454;
+  --admin-color-text-muted: #a3a3a3;
+  --admin-color-text-disabled: #dfdfdf;
+  --admin-color-bg-page: #f8f7fe;
+  --admin-color-bg-surface: #ffffff;
+  --admin-color-bg-hover: #f4edff;
+  --admin-color-bg-elevated: #ffffff;
+  --admin-color-border: #dfdfdf;
+  --admin-color-border-strong: #a3a3a3;
+
+  --admin-color-success: #01b0a1;
+  --admin-color-success-subtle: #e6f9f7;
+  --admin-color-warning: #af882e;
+  --admin-color-warning-subtle: #fffaed;
+  --admin-color-danger: #ff5a00;
+  --admin-color-danger-subtle: #ffefe6;
+
+  --admin-sidebar-bg: #ffffff;
+  --admin-sidebar-text: #545454;
+  --admin-sidebar-muted: #a3a3a3;
+  --admin-sidebar-hover: #f9f8f7;
+  --admin-sidebar-active: #f4edff;
+  --admin-sidebar-active-text: #3e1e6a;
+  --admin-sidebar-border: #f0efee;
+  --admin-avatar-bg: #9348fc;
+  --admin-diagram-grid: rgb(147 72 252 / 13%);
+  --admin-diagram-group-bg: rgb(244 237 255 / 76%);
+  --admin-diagram-edge: #656468;
+
+  --admin-space-1: 4px;
+  --admin-space-2: 8px;
+  --admin-space-3: 12px;
+  --admin-space-4: 16px;
+  --admin-space-6: 24px;
+  --admin-space-8: 32px;
+
+  --admin-radius-tag: 9999px;
+  --admin-radius-control: 12px;
+  --admin-radius-surface: 24px;
+  --admin-radius-dialog: 24px;
+
+  --admin-height-control-compact: 36px;
+  --admin-height-control: 40px;
+  --admin-height-control-comfortable: 48px;
+  --admin-height-header: 48px;
+  --admin-width-sidebar: 264px;
+  --admin-width-sidebar-collapsed: 72px;
+
+  --admin-shadow-floating: 0 16px 40px rgb(5 13 31 / 10%);
+  --admin-focus-ring: 0 0 0 3px rgb(147 72 252 / 24%);
+  --admin-motion-fast: 120ms;
+  --admin-motion-base: 180ms;
+}
+
+:root[data-admin-mode="dark"],
+[data-admin-theme="aurasearch"][data-admin-mode="dark"] {
+  color-scheme: dark;
+
+  --admin-color-primary: #9348fc;
+  --admin-color-primary-hover: #a96dfd;
+  --admin-color-primary-active: #6833b3;
+  --admin-color-primary-subtle: rgb(123 92 245 / 20%);
+  --admin-color-on-primary: #ffffff;
+  --admin-color-ai: #d500bb;
+  --admin-color-ai-subtle: rgb(213 0 187 / 20%);
+
+  --admin-color-text: #f0efee;
+  --admin-color-text-secondary: #dfdfdf;
+  --admin-color-text-muted: #a3a3a3;
+  --admin-color-text-disabled: #404040;
+  --admin-color-bg-page: #09090b;
+  --admin-color-bg-surface: #16161a;
+  --admin-color-bg-hover: #1a1c1e;
+  --admin-color-bg-elevated: #1a1c1e;
+  --admin-color-border: #242629;
+  --admin-color-border-strong: #404040;
+
+  --admin-color-success: #01c1b1;
+  --admin-color-success-subtle: rgb(1 193 177 / 20%);
+  --admin-color-warning: #ffc84c;
+  --admin-color-warning-subtle: rgb(255 200 76 / 20%);
+  --admin-color-danger: #ff7b33;
+  --admin-color-danger-subtle: rgb(255 90 0 / 20%);
+
+  --admin-sidebar-bg: #16161a;
+  --admin-sidebar-text: #dfdfdf;
+  --admin-sidebar-muted: #a3a3a3;
+  --admin-sidebar-hover: #1a1c1e;
+  --admin-sidebar-active: rgb(147 72 252 / 24%);
+  --admin-sidebar-active-text: #f0efee;
+  --admin-sidebar-border: #242629;
+  --admin-diagram-grid: rgb(169 109 253 / 18%);
+  --admin-diagram-group-bg: rgb(147 72 252 / 10%);
+  --admin-diagram-edge: #656468;
+  --admin-shadow-floating: 0 18px 48px rgb(0 0 0 / 42%);
+  --admin-focus-ring: 0 0 0 3px rgb(169 109 253 / 30%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--admin-color-text);
+  background: var(--admin-color-bg-page);
+  font-family: var(--admin-font-body);
+  font-size: 14px;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--admin-font-display);
+  letter-spacing: -0.025em;
+}
+
+code,
+kbd,
+pre {
+  font-family: var(--admin-font-mono);
+}
+
+:focus-visible {
+  outline: 2px solid var(--admin-color-primary);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

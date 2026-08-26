@@ -13,6 +13,15 @@
       "recommendedFor": ["general-product", "saas-marketing", "forms"]
     },
     {
+      "id": "aurasearch",
+      "label": "AuraSearch",
+      "colorScheme": "light",
+      "tokens": "assets/aurasearch-tokens.css",
+      "productReference": "references/theme-aurasearch.md",
+      "marketingReference": "references/marketing-theme-aurasearch.md",
+      "recommendedFor": ["ai-analytics", "llm-observability", "bi-dashboard", "saas"]
+    },
+    {
       "id": "clarity",
       "label": "Clarity",
       "colorScheme": "light",
