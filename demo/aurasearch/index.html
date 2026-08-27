@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="zh-CN" data-mode="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="AuraSearch 独立产品应用模板，完整演示 AI 可见性 SaaS 的系统外壳、分析仪表盘、Prompt 工作台和计费设置。"
+    />
+    <title>AuraSearch · AI Visibility Workspace</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#app-content">跳到主要内容</a>
+
+    <div class="app-shell" id="app-shell">
+      <aside class="sidebar" id="sidebar" aria-label="产品导航">
+        <div class="brand-row">
+          <button class="brand-button" type="button" data-action="workspace" aria-label="切换工作区">
+            <img class="brand-mark" src="./assets/logo.svg" alt="" width="32" height="32" />
+            <span class="brand-copy">
+              <strong>AuraSearch</strong>
+              <small>AI visibility</small>
+            </span>
+            <img class="brand-expand" src="./assets/expand.svg" alt="" width="24" height="24" />
+          </button>
+        </div>
+
+        <div class="workspace-switcher" role="button" tabindex="0" aria-label="当前工作区 Acme Corp">
+          <span class="workspace-avatar">A</span>
+          <span>Acme Corp</span>
+          <img src="./assets/chevron.svg" alt="" width="20" height="20" />
+        </div>
+
+        <nav class="sidebar-nav" aria-label="主要模块">
+          <p class="nav-label">Intelligence</p>
+          <button class="nav-item is-active" type="button" data-route="dashboard">
+            <span class="nav-icon"><img src="./assets/home.svg" alt="" /></span>
+            <span>Dashboard</span>
+          </button>
+          <button class="nav-item" type="button" data-route="projects">
+            <span class="nav-icon"><img src="./assets/projects.svg" alt="" /></span>
+            <span>Projects</span>
+          </button>
+          <button class="nav-item" type="button" data-route="engines">
+            <span class="nav-icon"><img src="./assets/bot.svg" alt="" /></span>
+            <span>AI Engines</span>
+          </button>
+          <button class="nav-item" type="button" data-route="visibility">
+            <span class="nav-icon"><img src="./assets/eye.svg" alt="" /></span>
+            <span>Visibility</span>
+          </button>
+          <button class="nav-item" type="button" data-route="prompts">
+            <span class="nav-icon"><img src="./assets/search.svg" alt="" /></span>
+            <span>Prompt Explorer</span>
+          </button>
+          <button class="nav-item" type="button" data-route="ranking">
+            <span class="nav-icon"><img src="./assets/rank.svg" alt="" /></span>
+            <span>Rank Tracking</span>
+          </button>
+          <button class="nav-item" type="button" data-route="competitors">
+            <span class="nav-icon"><img src="./assets/competitors.svg" alt="" /></span>
+            <span>Competitors</span>
+          </button>
+
+          <p class="nav-label nav-label-workspace">Workspace</p>
+          <button class="nav-item" type="button" data-route="mentions">
+            <span class="nav-icon"><img src="./assets/target.svg" alt="" /></span>
+            <span>Brand Mentions</span>
+          </button>
+          <button class="nav-item" type="button" data-route="opportunities">
+            <span class="nav-icon"><img src="./assets/star.svg" alt="" /></span>
+            <span>Opportunities</span>
+          </button>
+          <button class="nav-item" type="button" data-route="reports">
+            <span class="nav-icon"><img src="./assets/document.svg" alt="" /></span>
+            <span>Reports</span>
+          </button>
+          <button class="nav-item" type="button" data-route="settings">
+            <span class="nav-icon"><img src="./assets/settings.svg" alt="" /></span>
+            <span>Settings</span>
+          </button>
+        </nav>
+
+        <section class="storage-card" aria-label="存储空间">
+          <div class="storage-title">
+            <span><img src="./assets/cloud.svg" alt="" width="20" height="20" /> Storage</span>
+            <strong>56%</strong>
+          </div>
+          <div class="progress-track" aria-hidden="true"><span style="--progress: 56%"></span></div>
+          <p>500 GB of 900 GB used</p>
+          <button class="button button-small button-secondary" type="button" data-action="upgrade">
+            Upgrade Now
+          </button>
+        </section>
+      </aside>
+
+      <div class="sidebar-scrim" id="sidebar-scrim" aria-hidden="true"></div>
+
+      <section class="workspace">
+        <header class="topbar">
+          <button class="mobile-menu" id="mobile-menu" type="button" aria-label="打开导航" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+
+          <label class="global-search">
+            <img src="./assets/search.svg" alt="" width="20" height="20" />
+            <span class="sr-only">全局搜索</span>
+            <input id="global-search" type="search" placeholder="Search" autocomplete="off" />
+            <kbd>⌘ K</kbd>
+          </label>
+
+          <div class="topbar-actions">
+            <button class="top-pill" type="button" data-action="range">
+              <img src="./assets/calendar.svg" alt="" width="22" height="22" />
+              <span id="range-label">Last 30 Days</span>
+              <span aria-hidden="true">⌄</span>
+            </button>
+            <button class="top-pill ai-pill" type="button" data-action="aura">
+              <img src="./assets/bot.svg" alt="" width="22" height="22" />
+              <span>Aura AI</span>
+            </button>
+            <button class="icon-button" id="mode-toggle" type="button" aria-label="切换深浅色">
+              <span class="mode-icon" aria-hidden="true">☾</span>
+            </button>
+            <button class="icon-button notification-button" type="button" data-action="notifications" aria-label="通知">
+              <img src="./assets/notification.svg" alt="" width="22" height="22" />
+              <span class="notification-dot"></span>
+            </button>
+            <button class="profile-pill" type="button" data-action="profile">
+              <span class="profile-avatar"><img src="./assets/avatar.png" alt="" /></span>
+              <span class="profile-copy"><strong>Juyed Ahmed</strong><small>hijuyed@gmail.com</small></span>
+            </button>
+          </div>
+        </header>
+
+        <main id="app-content" tabindex="-1"></main>
+      </section>
+    </div>
+
+    <div class="command-panel" id="command-panel" hidden>
+      <div class="command-dialog" role="dialog" aria-modal="true" aria-labelledby="command-title">
+        <div class="command-search-row">
+          <img src="./assets/search.svg" alt="" width="20" height="20" />
+          <input id="command-input" type="search" placeholder="搜索页面、Prompt 或报告…" />
+          <kbd>ESC</kbd>
+        </div>
+        <p class="command-label" id="command-title">Quick navigation</p>
+        <div class="command-results" id="command-results"></div>
+      </div>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="./app.js"></script>
+  </body>
+</html>

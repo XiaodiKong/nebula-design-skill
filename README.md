@@ -207,7 +207,7 @@ Skill 也支持根据描述自动触发，但显式使用 `$nebula-design-skill`
 
 ## Demo
 
-项目包含产品应用与官网营销两类 Demo。
+项目包含两个多主题比较 Demo，以及一套不依赖它们的 AuraSearch 独立产品模板。
 
 产品应用 Demo：
 
@@ -221,6 +221,12 @@ demo/index.html
 demo/marketing.html
 ```
 
+AuraSearch 独立产品模板：
+
+```text
+demo/aurasearch/index.html
+```
+
 启动本地预览：
 
 ```bash
@@ -232,7 +238,10 @@ python3 -m http.server 8765
 ```text
 http://localhost:8765/demo/index.html
 http://localhost:8765/demo/marketing.html
+http://localhost:8765/demo/aurasearch/
 ```
+
+AuraSearch 目录拥有自己的 `index.html`、`styles.css`、`app.js` 和本地设计资产，可以整目录复制到其他静态站点，不需要主题注册表、多主题 Demo 或第三方依赖。
 
 产品应用 Demo 支持：
 
@@ -252,6 +261,14 @@ http://localhost:8765/demo/marketing.html
 - 不使用相关品牌 Logo、插画、客户名单或虚构商业数据。
 - 移动端布局、键盘焦点、语义 HTML 与 `prefers-reduced-motion`。
 - 主题质量门槛覆盖文字层重叠、参考线对齐、装饰密度、中文断行与多断点回退。
+
+AuraSearch 独立模板支持：
+
+- 原稿级 264px 圆角侧栏、48px 顶部工具栏、大圆角业务表面和本地 Figma 导出图标。
+- Dashboard、Prompt Explorer、AI 分析、竞品、报告和 Billing & Plans 等可切换页面。
+- Prompt 搜索/筛选/主从详情、Canvas 趋势图、命令面板、操作反馈与时间范围切换。
+- 浅色/暗色模式，以及 1240、1024、768 和 520px 四级响应式回退。
+- 移除原有 `demo/index.html` 或 `demo/marketing.html` 不会影响它运行。
 
 ## 项目结构
 
@@ -290,16 +307,23 @@ nebula-design-skill/
 │   ├── theme-selection.md               # 主题选择规则
 │   ├── color-strategy.md                # Monochrome First 等颜色策略
 │   ├── theme-quality-gates.md           # 主题转译与布局质量门槛
+│   ├── standalone-theme-implementation.md # 完整独立主题模板规则
 │   ├── typography-system.md             # 中英文字体与回退
 │   ├── diagram-design.md                # 架构图与关系图规范
 │   ├── page-patterns.md                 # 页面模式
 │   └── ...                              # 组件、实现与场景参考
 ├── demo/
 │   ├── index.html                       # 多主题风控关系图 Demo
-│   └── marketing.html                   # 多主题官网营销页 Demo
+│   ├── marketing.html                   # 多主题官网营销页 Demo
+│   └── aurasearch/                      # 独立 AuraSearch 产品 SPA
+│       ├── index.html
+│       ├── styles.css
+│       ├── app.js
+│       └── assets/                      # Figma 导出的本地演示资产
 └── scripts/
     ├── validate-theme-contract.mjs      # 主题契约校验
-    └── validate-demo.mjs                # Demo 结构与脚本校验
+    ├── validate-demo.mjs                # 多主题 Demo 校验
+    └── validate-standalone-demo.mjs     # 独立模板校验
 ```
 
 ## 自定义
@@ -336,13 +360,14 @@ nebula-design-skill/
 ```bash
 node scripts/validate-theme-contract.mjs
 node scripts/validate-demo.mjs
+node scripts/validate-standalone-demo.mjs demo/aurasearch
 ```
 
-第一条命令检查注册表、引用文件、主题令牌契约和跨主题颜色角色；第二条检查两个单 HTML Demo 的主题顺序、脚本语法、ID、锚点、语义结构和本地依赖约束。
+第一条命令检查注册表、引用文件、主题令牌契约和跨主题颜色角色；第二条检查两个单 HTML Demo 的主题顺序、脚本语法、ID、锚点、语义结构和本地依赖约束；第三条检查独立模板的入口、路由、深浅色、断点、本地资产与脚本语法。
 
 ## 设计来源与说明
 
-Cal.com、Notion、Linear、Claude 和 OpenCode AI 产品应用主题参考了 [VoltAgent/awesome-design-md](https://github.com/VoltAgent/awesome-design-md) 中的公开设计分析；Palantir 产品应用主题参考官方 [Blueprint](https://github.com/palantir/blueprint) 和 [Workshop 设计实践](https://www.palantir.com/docs/foundry/workshop/application-design-best-practices)。AuraSearch 主题来自用户提供的本地 Figma UI Kit，项目只沉淀视觉令牌、布局、组件与响应式规则，不分发原始设计稿或品牌素材。营销主题进一步研究了 [Cal.com](https://cal.com/)、[Notion](https://www.notion.com/)、[Linear](https://linear.app/)、[Claude by Anthropic](https://www.anthropic.com/claude)、[OpenCode](https://opencode.ai/)、[Clarity Design System](https://clarity.design/) 和 [Palantir](https://www.palantir.com/) 的官方公开网站。
+Cal.com、Notion、Linear、Claude 和 OpenCode AI 产品应用主题参考了 [VoltAgent/awesome-design-md](https://github.com/VoltAgent/awesome-design-md) 中的公开设计分析；Palantir 产品应用主题参考官方 [Blueprint](https://github.com/palantir/blueprint) 和 [Workshop 设计实践](https://www.palantir.com/docs/foundry/workshop/application-design-best-practices)。AuraSearch 主题来自用户提供的本地 Figma UI Kit；仓库不分发原始 `.fig` 画板，但独立演示模板包含为忠实验证设计语言而导出的部分图标和图形资产，公开分发前应确认原 UI Kit 的授权范围。营销主题进一步研究了 [Cal.com](https://cal.com/)、[Notion](https://www.notion.com/)、[Linear](https://linear.app/)、[Claude by Anthropic](https://www.anthropic.com/claude)、[OpenCode](https://opencode.ai/)、[Clarity Design System](https://clarity.design/) 和 [Palantir](https://www.palantir.com/) 的官方公开网站。
 
 本项目提供的是面向产品应用与营销官网的非官方前端适配，不是相关品牌的官方设计系统、商标授权或像素级复刻。
 

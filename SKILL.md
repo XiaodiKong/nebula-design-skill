@@ -40,6 +40,7 @@ description: Design, implement, review, and optimize frontend product experience
 - 任何新页面或页面重构：先读取 [references/surface-selection.md](references/surface-selection.md)。
 - 任何视觉任务：读取 [references/color-strategy.md](references/color-strategy.md) 和 [references/theme-selection.md](references/theme-selection.md)，先选颜色策略，再选主题。
 - 新增主题、主题专属布局、多主题切换器或主题转译评审：必须读取 [references/theme-quality-gates.md](references/theme-quality-gates.md)。
+- 用户要求完整、独立地实现某套设计，或要求交付可复制的主题产品模板：必须读取 [references/standalone-theme-implementation.md](references/standalone-theme-implementation.md)，不能只覆盖现有 Demo 的颜色令牌。
 - 需要查询默认主题、已注册主题或主题文件路径：读取 [assets/theme-registry.json](assets/theme-registry.json)，不要在新逻辑中硬编码主题数量。
 - 产品应用：读取 [references/visual-system.md](references/visual-system.md) 和 [references/application-shell-selection.md](references/application-shell-selection.md)。
 - 产品应用选择 Cal.com：读取 [references/theme-cal.md](references/theme-cal.md)。
@@ -175,6 +176,7 @@ description: Design, implement, review, and optimize frontend product experience
 - 图形页面检查节点重叠、连线穿越、文字截断、缩放边界、键盘操作和大数据量降级。
 - 验证关键操作、状态切换、空态、错误态和布局溢出。
 - 修改主题、令牌或 Demo 后运行 `node scripts/validate-theme-contract.mjs` 与 `node scripts/validate-demo.mjs`。
+- 新增或修改独立主题模板后，再运行 `node scripts/validate-standalone-demo.mjs <directory>`。
 
 ## 输出要求
 
