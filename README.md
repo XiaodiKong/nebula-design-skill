@@ -467,6 +467,12 @@ nebula-design-skill/
 修改主题、语义令牌或 Demo 后运行：
 
 ```bash
+npm test
+```
+
+`npm test` 会依次执行主题合同、多主题 Demo 和 AuraSearch 独立模板校验。需要单独排查时可以运行：
+
+```bash
 node scripts/validate-theme-contract.mjs
 node scripts/validate-demo.mjs
 node scripts/validate-standalone-demo.mjs demo/aurasearch

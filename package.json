@@ -4,7 +4,11 @@
   "description": "面向 Codex 的通用前端设计 Skill。它可以把需求转化为产品应用、企业中后台、营销官网、信息架构、交互规则、视觉主题，以及可运行的 HTML 页面或技术关系图。",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm run validate",
+    "validate": "npm run validate:themes && npm run validate:demos && npm run validate:aurasearch",
+    "validate:themes": "node scripts/validate-theme-contract.mjs",
+    "validate:demos": "node scripts/validate-demo.mjs",
+    "validate:aurasearch": "node scripts/validate-standalone-demo.mjs demo/aurasearch"
   },
   "repository": {
     "type": "git",
